@@ -44,4 +44,6 @@ After focusing on C for so long, transitioning to C++ can feel refreshing and su
 
 C++ opens up a world of possibilities that we can now explore with enthusiasm and creativity. Whether it's diving into object-oriented design, leveraging the STL, or using advanced C++ features, there's plenty to discover and apply.
 
-Let's embark on this journey with curiosity and excitement as we explore the power and elegance of C++!
+Remember though that we are still on a learning journey with 42 School :42:, so throughout all of these projects, we will be limited to using C++98!
+
+Now, let's go :fire:!

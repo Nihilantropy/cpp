@@ -19,8 +19,8 @@ private:
 	static const int	max_contact = 8;
 	Contact				contacts[max_contact];
 	int					contact_count;
-	void 				showAllContacts() const;
-	void 				showContactDetails(int index) const;
+	static void 		showAllContacts();
+	static void 		showContactDetails(int index);
 };
 
 #endif

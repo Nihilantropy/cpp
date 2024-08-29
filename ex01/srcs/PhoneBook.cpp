@@ -83,7 +83,7 @@ void	PhoneBook::searchContact() const
 		with text right-aligned. If a field's content is longer than the column width,
 		it is truncated and followed by a dot. The index is displayed starting from 1.
 */
-void	PhoneBook::showAllContacts() const
+void	PhoneBook::showAllContacts()
 {
 	std::cout << std::setw(10) << std::right << "Index" << " | "
 			  << std::setw(10) << std::right << "First Name" << " | "
@@ -105,7 +105,7 @@ void	PhoneBook::showAllContacts() const
 		- Outputs the contact's first name, last name, nickname,
 		  phone number, and darkest secret, each on a new line.
 */
-void	PhoneBook::showContactDetails(int index) const
+void	PhoneBook::showContactDetails(int index)
 {
 	const Contact& contact = contacts[index];
 	std::cout << "First Name: " << contact.getFirstName() << std::endl

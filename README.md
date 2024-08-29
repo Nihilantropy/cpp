@@ -15,6 +15,7 @@ C++ introduces the concepts of classes and objects, which are fundamental to OOP
 - **Polymorphism**: Use a single interface to represent different underlying forms (data types).
 
 ### 2. **Standard Template Library (STL)** 📚
+#### Modules 08 and 09 only :rotating_light:!
 
 The STL in C++ provides a rich set of ready-to-use classes and functions for handling collections of data, algorithms, and iterators. From vectors to maps, the STL simplifies many common tasks.
 

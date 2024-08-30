@@ -19,20 +19,42 @@ void	PhoneBook::addNewContact()
 	std::string	firstName, lastName, nickname, phoneNumber, darkestSecret;
 
 	std::cout << "Enter First Name: ";
-	std::cin.ignore();
-	std::getline(std::cin, firstName);
-	std::cout << "Enter Last Name: ";
-	std::getline(std::cin, lastName);
-	std::cout << "Enter Nickname: ";
-	std::getline(std::cin, nickname);
-	std::cout << "Enter Phone Number: ";
-	std::getline(std::cin, phoneNumber);
-	std::cout << "Enter Darkest Secret: ";
-	std::getline(std::cin, darkestSecret);
-
-	if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty())
+	std::getline(std::cin >> std::ws, firstName);
+	if (firstName.empty())
 	{
-		std::cerr << "Contact can't have empty fields!" << std::endl;
+		std::cerr << "Error: First Name cannot be empty!" << std::endl;
+		return;
+	}
+
+	std::cout << "Enter Last Name: ";
+	std::getline(std::cin >> std::ws, lastName);
+	if (lastName.empty())
+	{
+		std::cerr << "Error: Last Name cannot be empty!" << std::endl;
+		return;
+	}
+
+	std::cout << "Enter Nickname: ";
+	std::getline(std::cin >> std::ws, nickname);
+	if (nickname.empty())
+	{
+		std::cerr << "Error: Nickname cannot be empty!" << std::endl;
+		return;
+	}
+
+	std::cout << "Enter Phone Number: ";
+	std::getline(std::cin >> std::ws, phoneNumber);
+	if (phoneNumber.empty())
+	{
+		std::cerr << "Error: Phone Number cannot be empty!" << std::endl;
+		return;
+	}
+
+	std::cout << "Enter Darkest Secret: ";
+	std::getline(std::cin >> std::ws, darkestSecret);
+	if (darkestSecret.empty())
+	{
+		std::cerr << "Error: Darkest Secret cannot be empty!" << std::endl;
 		return;
 	}
 
@@ -57,7 +79,7 @@ void	PhoneBook::addNewContact()
 		- If the input is invalid, display an error message and return
 		- If the input is valid, display the details of the contact at the given index
 */
-void	PhoneBook::searchContact() const
+void	PhoneBook::searchContact()
 {
 	showAllContacts();
 
@@ -66,7 +88,7 @@ void	PhoneBook::searchContact() const
 	std::cout << "Enter the index of the contact to display: ";
 	std::cin >> index;
 
-	if (std::cin.fail() || index < 0 || index >= contact_count)
+	if (std::cin.fail() || index < 1 || index > contact_count)
 	{
 		std::cout << "Invalid index." << std::endl;
 		std::cin.clear();
@@ -83,7 +105,7 @@ void	PhoneBook::searchContact() const
 		with text right-aligned. If a field's content is longer than the column width,
 		it is truncated and followed by a dot. The index is displayed starting from 1.
 */
-void	PhoneBook::showAllContacts()
+void	PhoneBook::showAllContacts() const
 {
 	std::cout << std::setw(10) << std::right << "Index" << " | "
 			  << std::setw(10) << std::right << "First Name" << " | "
@@ -105,9 +127,10 @@ void	PhoneBook::showAllContacts()
 		- Outputs the contact's first name, last name, nickname,
 		  phone number, and darkest secret, each on a new line.
 */
-void	PhoneBook::showContactDetails(int index)
+void	PhoneBook::showContactDetails(int index) const
 {
-	const Contact& contact = contacts[index];
+	const Contact& contact = contacts[--index];
+	
 	std::cout << "First Name: " << contact.getFirstName() << std::endl
 			  << "Last Name: " << contact.getLastName() << std::endl
 			  << "Nickname: " << contact.getNickname() << std::endl

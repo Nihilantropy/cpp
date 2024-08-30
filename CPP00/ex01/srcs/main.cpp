@@ -1,5 +1,6 @@
-#include <iostream>
 #include "PhoneBook.h"
+
+static int	commandToOption( std::string& command );
 
 /*	main
 		The entry point of the program that handles user interaction and
@@ -20,24 +21,37 @@ int main()
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::cin >> command;
 
-		if (command == "ADD")
+		std::transform(command.begin(), command.end(), command.begin(), ::toupper);
+
+		switch (commandToOption(command))
 		{
-			phoneBook.addNewContact();
-		}
-		else if (command == "SEARCH")
-		{
-			phoneBook.searchContact();
-		}
-		else if (command == "EXIT")
-		{
-			phoneBook.exitPhoneBook();
-			break ;
-		}
-		else
-		{
-			std::cout << "Invalid command. Please try again." << std::endl;
+			case 1:
+				phoneBook.addNewContact();
+				break ;
+			case 2:
+				phoneBook.searchContact();
+				break ;
+			case 3:
+				phoneBook.exitPhoneBook();
+				return 0;
+
+			default:
+				std::cout << "Invalid command. Please try again." << std::endl;
+				break ;
 		}
 	}
 
 	return (0);
+}
+
+static int	commandToOption( std::string& command )
+{
+	if (command == "ADD")
+		return 1;
+	else if (command == "SEARCH")
+		return 2;
+	else if (command == "EXIT")
+		return 3;
+	else
+		return 0;
 }

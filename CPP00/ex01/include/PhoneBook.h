@@ -12,15 +12,15 @@ public:
 	~PhoneBook();
 	
 	void	addNewContact();
-	void	searchContact() const;
+	void	searchContact();
 	void	exitPhoneBook();
 
 private:
 	static const int	max_contact = 8;
 	Contact				contacts[max_contact];
 	int					contact_count;
-	static void 		showAllContacts();
-	static void 		showContactDetails(int index);
+	void 				showAllContacts() const;
+	void 				showContactDetails(int index) const;
 };
 
 #endif

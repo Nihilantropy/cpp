@@ -60,12 +60,9 @@ EOF
 
 # Source file creation
 cat <<EOF > $source_file
-#include "../$header_dir/$header_file"
+#include "..$header_dir/$header_file"
 
-$class_name::$class_name()
-{
-	// Constructor implementation
-}
+$class_name::$class_name() {}
 
 $class_name::$class_name(const $class_name& other)
 {
@@ -81,10 +78,8 @@ $class_name& $class_name::operator=(const $class_name& other)
 	return *this;
 }
 
-$class_name::~$class_name()
-{
-	// Destructor implementation
-}
+$class_name::~$class_name() {}
+
 EOF
 
 # User feedback

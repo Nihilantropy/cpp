@@ -21,8 +21,6 @@ int main()
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::cin >> command;
 
-		std::transform(command.begin(), command.end(), command.begin(), ::toupper);
-
 		switch (commandToOption(command))
 		{
 			case 1:

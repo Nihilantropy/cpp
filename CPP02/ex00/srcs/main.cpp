@@ -1,5 +1,4 @@
 # include "../include/Fixed.h"
-# include <iostream>
 
 int main( void )
 {

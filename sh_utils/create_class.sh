@@ -47,8 +47,8 @@ class $class_name
 {
 public:
 	$class_name();
-	$class_name(const $class_name&);
-	$class_name& operator=(const $class_name&);
+	$class_name( const $class_name& other );
+	$class_name& operator=( const $class_name& other );
 	~$class_name();
 
 private:
@@ -64,12 +64,12 @@ cat <<EOF > $source_file
 
 $class_name::$class_name() {}
 
-$class_name::$class_name(const $class_name& other)
+$class_name::$class_name( const $class_name& other )
 {
-	// Copy constructor implementation
+	*this = other;
 }
 
-$class_name& $class_name::operator=(const $class_name& other)
+$class_name& $class_name::operator=( const $class_name& other )
 {
 	if (this != &other)
 	{

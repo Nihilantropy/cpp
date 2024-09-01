@@ -9,9 +9,9 @@ class Fixed
 public:
 	Fixed();
 	Fixed( const int );
-	Fixed ( const float);
+	Fixed ( const float other );
 	Fixed( const Fixed& );
-	Fixed& operator=( const Fixed& );
+	Fixed& operator=( const Fixed& other );
 	~Fixed();
 
 	float	toFloat( void ) const;

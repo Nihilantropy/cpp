@@ -11,17 +11,21 @@ public:
 	ClapTrap& operator=( const ClapTrap& other );
 	~ClapTrap();
 
-	int		getHitPoints( void ) const;
-	void	setHitPoints( int hitPoints );
-	int		getEnergyPoints( void ) const;
-	void	setEnergyPoints( int energyPoints );
-	int		getAttackDamage( void ) const;
-	void	setAttackDamage( int attackDamage );
+	/*** getter  ***/
+	std::string	getName( void ) const;
+	int			getHitPoints( void ) const;
+	int			getEnergyPoints( void ) const;
+	int			getAttackDamage( void ) const;
+	
+	/*** setter  ***/
+	void		setHitPoints( int hitPoints );
+	void		setEnergyPoints( int energyPoints );
+	void		setAttackDamage( int attackDamage );
 
-
+	/*** public methods ***/
 	void	attack( const std::string& target );
-	//void	takeDamage( unsigned int amount );
-	//void	beRepaired( unsigned int amount );
+	void	takeDamage( unsigned int amount );
+	void	beRepaired( unsigned int amount );
 
 private:
 	std::string	_name;

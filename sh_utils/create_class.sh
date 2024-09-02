@@ -60,7 +60,7 @@ EOF
 
 # Source file creation
 cat <<EOF > $source_file
-#include <$class_name.h>
+#include "../include/$class_name.h"
 
 /***  Costructor ***/
 $class_name::$class_name() {}

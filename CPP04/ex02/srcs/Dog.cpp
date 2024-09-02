@@ -46,4 +46,3 @@ void	Dog::makeSound( void ) const
 {
 	std::cout << "Bau Bau" << std::endl;
 }
-

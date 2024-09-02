@@ -60,12 +60,15 @@ EOF
 
 # Source file creation
 cat <<EOF > $source_file
-#include <$class_name>
+#include <$class_name.h>
 
+/***  Costructor ***/
 $class_name::$class_name() {}
 
+/***  Copy costructor ***/
 $class_name::$class_name( const $class_name& other ) { *this = other; }
 
+/***  Assignement operator override ***/
 $class_name& $class_name::operator=( const $class_name& other )
 {
 	if (this != &other)
@@ -75,6 +78,7 @@ $class_name& $class_name::operator=( const $class_name& other )
 	return *this;
 }
 
+/***  Destructor ***/
 $class_name::~$class_name() {}
 
 EOF

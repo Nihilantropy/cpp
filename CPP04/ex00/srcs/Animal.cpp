@@ -1,4 +1,4 @@
-#include <Animal.h>
+#include "Animal.h"
 
 Animal::Animal() : _type("") { std::cout << "Animal costructor called" << std::endl; }
 
@@ -23,4 +23,3 @@ void	Animal::makeSound( void ) const
 {
 	std::cout << "..." << std::endl;
 }
-

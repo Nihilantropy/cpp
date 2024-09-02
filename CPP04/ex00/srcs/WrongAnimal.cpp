@@ -1,4 +1,4 @@
-#include <WrongAnimal.h>
+#include "WrongAnimal.h"
 
 WrongAnimal::WrongAnimal() : _type("") { std::cout << "WrongAnimal costructor called" << std::endl; }
 

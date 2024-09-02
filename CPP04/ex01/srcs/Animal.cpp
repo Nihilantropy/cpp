@@ -1,4 +1,4 @@
-#include <Animal.h>
+#include "Animal.h"
 
 /***  Costructor ***/
 Animal::Animal() : _type("") { std::cout << "Animal costructor called" << std::endl; }

@@ -60,14 +60,11 @@ EOF
 
 # Source file creation
 cat <<EOF > $source_file
-#include "..$header_dir/$header_file"
+#include <$header_file>
 
 $class_name::$class_name() {}
 
-$class_name::$class_name( const $class_name& other )
-{
-	*this = other;
-}
+$class_name::$class_name( const $class_name& other ) { *this = other; }
 
 $class_name& $class_name::operator=( const $class_name& other )
 {

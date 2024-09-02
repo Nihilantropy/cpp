@@ -2,7 +2,7 @@
 
 int main() {
     // Creazione di un oggetto ClapTrap
-    ClapTrap claptrap("CLTP");
+    ClapTrap claptrap("CL4P-Vx27");
 
     // Test iniziale
     std::cout << "Initial state:" << std::endl;
@@ -34,6 +34,7 @@ int main() {
     claptrap.setHitPoints(0);
     claptrap.takeDamage(5);
     claptrap.attack("enemy3");
+	claptrap.setEnergyPoints(10);
     claptrap.beRepaired(5);
 
     return 0;

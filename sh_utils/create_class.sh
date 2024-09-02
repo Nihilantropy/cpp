@@ -60,7 +60,7 @@ EOF
 
 # Source file creation
 cat <<EOF > $source_file
-#include <$header_file>
+#include <$class_name>
 
 $class_name::$class_name() {}
 

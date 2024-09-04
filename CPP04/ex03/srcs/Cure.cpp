@@ -19,5 +19,11 @@ Cure::~Cure() {}
 
 AMateria*	Cure::clone( void ) const
 {
+	std::cout << "Clone method called for " << _type << " Materia" << std::endl;
 	return new Cure(*this);
+}
+
+void	Cure::use( ICharacter& target )
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

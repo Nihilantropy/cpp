@@ -11,7 +11,9 @@ public:
 	Ice& operator=( const Ice& other );
 	~Ice();
 
-	AMateria*	clone( void ) const;
+	/*** Public methdos ***/
+	AMateria*	clone( void ) const; // pure override
+	void		use( ICharacter& target ); // override
 };
 
 #endif

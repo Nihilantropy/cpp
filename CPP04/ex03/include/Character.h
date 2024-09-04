@@ -11,7 +11,7 @@ public:
 	Character& operator=( const Character& other );
 	virtual	~Character();
 
-	/*** Override ICharacter methods ***/
+	/*** Pure override ICharacter methods ***/
 	const std::string&	getName( void ) const;
 	void				equip( AMateria* m);
 	void				unequip( int idx );

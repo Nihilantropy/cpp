@@ -19,5 +19,11 @@ Ice::~Ice() {}
 
 AMateria*	Ice::clone( void ) const
 {
+	std::cout << "Clone method called for " << _type << " Materia" << std::endl;
 	return new Ice(*this);
+}
+
+void	Ice::use( ICharacter& target )
+{
+	std::cout << "* shoot an ice bolt at " << target.getName() << " *" << std::endl;
 }

@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include "ICharacter.h"
 
 class ICharacter;
 

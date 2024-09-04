@@ -4,6 +4,9 @@
 # include "ICharacter.h"
 # include "AMateria.h"
 
+# define FLOOR_CAP 10
+# define INV_SLOT 4
+
 class Character : public ICharacter
 {
 public:
@@ -14,20 +17,25 @@ public:
 
 	/*** Pure override ICharacter methods ***/
 
-	/** Getters ***/
+	/*** Getters ***/
 	std::string const &	getName( void ) const;
 	AMateria*	const*	getInventory( void ) const;
+	AMateria*	const*	getFloor( void ) const;
 
 	/*** Public methods ***/
 	void	equip( AMateria* m);
 	void	unequip( int idx );
 	void	use( int idx, ICharacter& target );
 
+	/*** Debug ***/
+	void	printInventory( void ) const;
+	void	printFloor( void ) const;
+
 private:
 	std::string	_name;
 	AMateria*	_inventory[4];
-	AMateria*	_unequipped[100];
-	int			_unequippedCount;
+	AMateria*	_floor[FLOOR_CAP];
+	int			_floorCount;
 	void		clearInventory( void );
 };
 

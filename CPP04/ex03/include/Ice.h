@@ -7,8 +7,8 @@ class Ice : public AMateria
 {
 public:
 	Ice();
-	Ice( const Ice& other );
-	Ice& operator=( const Ice& other );
+	Ice( Ice const & other );
+	Ice& operator=( Ice const & other );
 	~Ice();
 
 	/*** Public methdos ***/

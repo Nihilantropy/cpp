@@ -10,9 +10,9 @@ class ICharacter;
 class AMateria
 {
 public:
-	AMateria( const std::string& type );
-	AMateria( const AMateria& other );
-	AMateria& operator=( const AMateria& other );
+	AMateria( std::string const & type );
+	AMateria( AMateria const & other );
+	AMateria& operator=( AMateria const & other );
 	virtual ~AMateria();
 
 	/*** Getters ***/

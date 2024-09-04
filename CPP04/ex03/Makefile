@@ -1,7 +1,7 @@
 # Variables
 NAME = interface
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRC_DIR = srcs
 INC_DIR = include
 OBJ_DIR = obj

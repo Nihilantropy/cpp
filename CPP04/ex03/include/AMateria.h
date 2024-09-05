@@ -23,7 +23,7 @@ public:
 	virtual void		use( ICharacter& target );
 
 protected:
-	std::string	_type;
+	const std::string	_type;
 };
 
 #endif

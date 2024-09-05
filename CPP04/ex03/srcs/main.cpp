@@ -1,6 +1,7 @@
-# include "Ice.h"
-# include "Cure.h"
-# include "Character.h"
+#include "../include/Ice.h"
+#include "../include/Cure.h"
+#include "../include/Character.h"
+#include "../include/MateriaSource.h"
 
 int main()
 {
@@ -34,12 +35,12 @@ int main()
 
 	std::cout << "\n*** test for AMateria public methods ***\n" << std::endl;
 
-	Character*	bob = new Character("bob");
+	Character*	don = new Character("don");
 
-	std::cout << "Character name is: " << bob->getName() << std::endl;
+	std::cout << "Character name is: " << don->getName() << std::endl;
 
-	ice.use(*bob);
-	cure->use(*bob);
+	ice.use(*don);
+	cure->use(*don);
 
 	delete cure;
 
@@ -50,72 +51,72 @@ int main()
 
 	AMateria*	cure2 = new Cure();
 
-	//bob->equip(&ice); // uncomment to see the error
-	bob->equip(cure2);
-	//bob->equip(&cure_copy); // uncomment to see the error
+	//don->equip(&ice); // uncomment to see the error
+	don->equip(cure2);
+	//don->equip(&cure_copy); // uncomment to see the error
 	
-	bob->printInventory();
-	bob->printFloor();
+	don->printInventory();
+	don->printFloor();
 
 	std::cout << "\n*** test the inventory surplus and the unequip method ***\n" << std::endl;
 
-	bob->equip(cure2); // Already equippep
+	don->equip(cure2); // Already equippep
 
-	bob->unequip(10); // Invalid input
-	bob->unequip(-10); // Invalid input
+	don->unequip(10); // Invalid input
+	don->unequip(-10); // Invalid input
 
-	bob->unequip(0); // putting the materia on the floor
+	don->unequip(0); // putting the materia on the floor
 
 	
-	bob->printInventory();
-	bob->printFloor();
+	don->printInventory();
+	don->printFloor();
 
-	bob->unequip(0); // Nothing in slot 0
-	bob->unequip(1); // Nothing in slot 1
+	don->unequip(0); // Nothing in slot 0
+	don->unequip(1); // Nothing in slot 1
 
-	bob->equip(cure2); // Pick up the materia from the floor and equip it
+	don->equip(cure2); // Pick up the materia from the floor and equip it
 
-	bob->printInventory();
-	bob->printFloor();
+	don->printInventory();
+	don->printFloor();
 
 	/* Usign the clone method to clone the materia to fill the inventory */
 	AMateria*	cure3 = cure2->clone();
-	bob->equip(cure3); // Equip at slot 1
+	don->equip(cure3); // Equip at slot 1
 
 	AMateria*	ice2 = new Ice();
-	bob->equip(ice2);
+	don->equip(ice2);
 
 	AMateria* ice3 = ice2->clone();
-	bob->equip(ice3);
+	don->equip(ice3);
 
-	bob->printInventory();
-	bob->printFloor();
+	don->printInventory();
+	don->printFloor();
 
-	bob->unequip(0);
-	bob->unequip(1);
-	bob->unequip(2);
-	bob->unequip(3);
+	don->unequip(0);
+	don->unequip(1);
+	don->unequip(2);
+	don->unequip(3);
 
-	bob->printInventory();
-	bob->printFloor();
+	don->printInventory();
+	don->printFloor();
 
-	bob->equip(cure2);
-	bob->equip(ice2);
-	bob->equip(cure3);
-	bob->equip(ice3);
+	don->equip(cure2);
+	don->equip(ice2);
+	don->equip(cure3);
+	don->equip(ice3);
 
-	bob->printInventory();
-	bob->printFloor();
+	don->printInventory();
+	don->printFloor();
 
 	/* Try to put a fifth materia in the inventory */
 	AMateria*	cure4 = new Cure();
-	bob->equip(cure4);
+	don->equip(cure4);
 
 	delete cure4;
 
 	std::cout << "\n*** test the copy constructor ***\n" << std::endl;
 
-	Character* alex(bob);
+	Character* alex(don);
 
 	alex->printInventory();
 	alex->printFloor();
@@ -137,7 +138,7 @@ int main()
 
 	Character*	christian = new Character("Christian");
 
-	*christian = *bob;
+	*christian = *don;
 
 	christian->printInventory();
 	christian->printFloor();
@@ -150,11 +151,14 @@ int main()
 	christian->printInventory();
 	christian->printFloor();
 
+	
+	/* This prove that the materia passed are not cloned (only specific functions
+		call the clone method)
 	christian->equip(cure2);
 	christian->equip(ice2);
 	christian->equip(cure3);
 	christian->equip(ice3);
-
+	
 	christian->printInventory();
 	christian->printFloor();
 
@@ -162,13 +166,38 @@ int main()
 	christian->unequip(1);
 	christian->unequip(2);
 	christian->unequip(3);
-
+	*/
 	christian->printInventory();
 	christian->printFloor();
 
 	std::cout << std::endl;
 
-	delete bob;
+	delete don;
 	delete christian;
+
+	std::cout << "\n***Testing the subject test ***\n" << std::endl;
+
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+
+	std::cout << std::endl;
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	std::cout << std::endl;
+
+	delete bob;
+	delete me;
+	delete src;
+
 	return 0;
 }

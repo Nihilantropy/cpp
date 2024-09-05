@@ -4,14 +4,13 @@
 AMateria::AMateria( const std::string& type ) : _type(type) { std::cout << "Costructor called for " << _type << " AMateria" << std::endl; }
 
 /***  Copy costructor ***/
-AMateria::AMateria( const AMateria& other ) : _type(other._type) { std::cout << "Copy costructor called for " << _type << " AMateria" << std::endl; }
+AMateria::AMateria( const AMateria& other ) : _type(other._type) { (void)other; std::cout << "Copy costructor called for " << _type << " AMateria" << std::endl; }
 
 /***  Assignement operator override ***/
 AMateria& AMateria::operator=( const AMateria& other )
 {
-	std::cout << "Assignement operator called for " << _type << " AMateria" << std::endl;
 	if (this != &other)
-		this->_type = other._type;
+		std::cout << "Assignement operator called for " << _type << " AMateria" << std::endl;
 	return *this;
 }
 

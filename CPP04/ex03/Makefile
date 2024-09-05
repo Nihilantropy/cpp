@@ -1,5 +1,5 @@
 # Variables
-NAME = interface
+NAME = a.out
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRC_DIR = srcs

@@ -1,7 +1,7 @@
 #ifndef CAT_H
 #define CAT_H
 
-# include <Animal.h>
+# include "Animal.h"
 
 class Cat : public Animal
 {

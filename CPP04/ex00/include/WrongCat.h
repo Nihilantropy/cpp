@@ -1,7 +1,7 @@
 #ifndef WrongCat_H
 #define WrongCat_H
 
-# include <WrongAnimal.h>
+# include "WrongAnimal.h"
 
 class WrongCat : public WrongAnimal
 {

@@ -37,11 +37,8 @@ fi
 # Change directory to the created folder
 cd "$folder_name" || exit
 
-# Create 'include' and 'srcs' subfolders
-mkdir -p include srcs
-
 # Create 'main.cpp' in the 'srcs' directory if it doesn't exist
-main_file="srcs/main.cpp"
+main_file="main.cpp"
 if [ ! -f "$main_file" ]; then
 	cat <<EOF > "$main_file"
 // Add dependencies

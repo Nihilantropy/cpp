@@ -26,17 +26,9 @@ fi
 # Convert class name to uppercase for include guards
 class_name_upper=$(echo "$class_name" | tr '[:lower:]' '[:upper:]')
 
-# Directory paths
-include_dir="include"
-srcs_dir="srcs"
-
-# Create directories if they don't exist
-[ ! -d "$include_dir" ] && mkdir -p "$include_dir"
-[ ! -d "$srcs_dir" ] && mkdir -p "$srcs_dir"
-
 # Header and source file names with specified paths
-header_file="${include_dir}/${class_name}.h"
-source_file="${srcs_dir}/${class_name}.cpp"
+header_file="${class_name}.h"
+source_file="${class_name}.cpp"
 
 # Header file creation
 cat <<EOF > $header_file
@@ -60,7 +52,7 @@ EOF
 
 # Source file creation
 cat <<EOF > $source_file
-#include "../include/$class_name.h"
+#include "$class_name.h"
 
 /***  Costructor ***/
 $class_name::$class_name() {}
@@ -84,4 +76,4 @@ $class_name::~$class_name() {}
 EOF
 
 # User feedback
-echo "Class $class_name created successfully in $include_dir and $srcs_dir directories!"
+echo "Class $class_name created successfully!"

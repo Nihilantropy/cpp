@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Animal.h"
-#include "Cat.h"
-#include "Dog.h"
+#include "../include/Animal.h"
+#include "../include/Cat.h"
+#include "../include/Dog.h"
 
 int main()
 {

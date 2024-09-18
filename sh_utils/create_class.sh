@@ -60,7 +60,7 @@ $class_name::$class_name() {}
 /***  Copy costructor ***/
 $class_name::$class_name( const $class_name& other ) { *this = other; }
 
-/***  Assignement operator override ***/
+/***  assignment operator override ***/
 $class_name& $class_name::operator=( const $class_name& other )
 {
 	if (this != &other)

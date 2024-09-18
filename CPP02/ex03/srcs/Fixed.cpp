@@ -33,7 +33,7 @@ Fixed::Fixed( const Fixed& other )
 	*this = other;
 }
 
-// Assignement operator to make this object data, euqals to other object data
+// assignment operator to make this object data, euqals to other object data
 Fixed& Fixed::operator=( const Fixed& other )
 {
 	// std::cout << "Copy assignment operator called" << std::endl;

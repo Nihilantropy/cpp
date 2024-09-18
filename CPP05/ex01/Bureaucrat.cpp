@@ -9,7 +9,7 @@ Bureaucrat::Bureaucrat( const std::string& name, int grade ) : _name(name), _gra
 /* copy costructor */
 Bureaucrat::Bureaucrat( const Bureaucrat& other ) : _name(other._name), _grade(other._grade) {}
 
-/* assignament operator */
+/* assignment operator */
 Bureaucrat&	Bureaucrat::operator=( const Bureaucrat& other )
 {
 	if (this != &other)
@@ -37,8 +37,22 @@ void	Bureaucrat::decrementGrade()
 	_grade++;
 }
 
+void	Bureaucrat::signForm( Form& form ) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+	
+}
+
 /* private methods */
-void	Bureaucrat::checkGrade( int grade )
+void	Bureaucrat::checkGrade( int grade ) const
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -46,9 +60,9 @@ void	Bureaucrat::checkGrade( int grade )
 		throw GradeTooLowException();
 }
 
-/* '<<' operator overload to show more informations */
+/* << operator overload */
 std::ostream& operator<<( std::ostream& os, const Bureaucrat& bureaucrat )
 {
-	os << bureaucrat.getName() << ", bureaucrat grade is: " << bureaucrat.getGrade() << std::endl;
+	os << bureaucrat.getName() << ", bureaucrat grade is: " << bureaucrat.getGrade();
 	return os;
 }

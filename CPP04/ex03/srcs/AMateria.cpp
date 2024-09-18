@@ -6,11 +6,11 @@ AMateria::AMateria( const std::string& type ) : _type(type) { std::cout << "Cost
 /***  Copy costructor ***/
 AMateria::AMateria( const AMateria& other ) : _type(other._type) { (void)other; std::cout << "Copy costructor called for " << _type << " AMateria" << std::endl; }
 
-/***  Assignement operator override ***/
+/***  assignment operator override ***/
 AMateria& AMateria::operator=( const AMateria& other )
 {
 	if (this != &other)
-		std::cout << "Assignement operator called for " << _type << " AMateria" << std::endl;
+		std::cout << "assignment operator called for " << _type << " AMateria" << std::endl;
 	return *this;
 }
 

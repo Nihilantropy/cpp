@@ -18,7 +18,7 @@ Brain::Brain( const Brain& other )
 		_ideas[i] = other._ideas[i];
 }
 
-/***  Assignement operator override with deep copy implementation ***/
+/***  assignment operator override with deep copy implementation ***/
 Brain& Brain::operator=( const Brain& other )
 {
 	std::cout << "Brain assignment operator called" << std::endl;

@@ -16,7 +16,7 @@ Dog::Dog( const Dog& other ) : Animal(other)
 	_brain = new Brain(*other._brain);
 }
 
-/***  Assignement operator override with deep copy implementation ***/
+/***  assignment operator override with deep copy implementation ***/
 Dog&	Dog::operator=( const Dog& other )
 {
 	std::cout << _type << " assignment operator called" << std::endl;

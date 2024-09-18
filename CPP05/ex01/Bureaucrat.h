@@ -4,23 +4,30 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
+# include "Form.h"
+
+class Form;
 
 class Bureaucrat
 {
 public:
-	/* costructor & destructor */
+	/* costructor */
 	Bureaucrat( const std::string& name, int grade );
+	/* copy costructor */
 	Bureaucrat( const Bureaucrat& other );
+	/* assignment operator */
 	Bureaucrat& operator= ( const Bureaucrat& other );
+	/* destructor */
 	~Bureaucrat();
 
 	/* getter */
-	int					getGrade( void ) const;
 	const std::string&	getName( void ) const;
+	int					getGrade( void ) const;
 
 	/* public methods */
 	void			incrementGrade();
 	void			decrementGrade();
+	void			signForm( Form& form ) const;
 
 	/* exception class with what() method override */
 	class	GradeTooHighException : public std::exception
@@ -45,7 +52,7 @@ public:
 private:
 	const std::string	_name;
 	int					_grade;
-	void				checkGrade( int grade );
+	void				checkGrade( int grade ) const ;
 };
 
 std::ostream& operator<<( std::ostream& os, const Bureaucrat& bureaucrat );

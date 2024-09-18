@@ -6,7 +6,7 @@ Ice::Ice() : AMateria("ice") {}
 /***  Copy costructor ***/
 Ice::Ice( const Ice& other ) : AMateria(other) {}
 
-/***  Assignement operator override ***/
+/***  assignment operator override ***/
 Ice& Ice::operator=( const Ice& other )
 {
 	if (this != &other)

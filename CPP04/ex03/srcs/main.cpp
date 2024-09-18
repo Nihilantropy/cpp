@@ -134,7 +134,7 @@ int main()
 	alex->equip(cure3);
 	alex->equip(ice3);
 
-	std::cout << "\n*** Test for assignement operetor ***\n" << std::endl;
+	std::cout << "\n*** Test for assignment operetor ***\n" << std::endl;
 
 	Character*	christian = new Character("Christian");
 

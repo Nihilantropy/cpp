@@ -6,7 +6,7 @@ Animal::Animal() : _type("") { std::cout << "Animal costructor called" << std::e
 /***  Copy costructor ***/
 Animal::Animal( const Animal& other ) { *this = other; }
 
-/*** Assignement operator override ***/
+/*** assignment operator override ***/
 Animal& Animal::operator=( const Animal& other )
 {
 	if (this != &other)

@@ -6,7 +6,7 @@ Cure::Cure() : AMateria("cure") {}
 /***  Copy costructor ***/
 Cure::Cure( const Cure& other ) : AMateria(other) {}
 
-/***  Assignement operator override ***/
+/***  assignment operator override ***/
 Cure& Cure::operator=( const Cure& other )
 {
 	if (this != &other)

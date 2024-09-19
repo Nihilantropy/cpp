@@ -8,25 +8,25 @@
 class Bureaucrat
 {
 public:
-	/* costructor & destructor */
+	/*** costructor & destructor ***/
 	Bureaucrat( const std::string& name, int grade );
 	Bureaucrat( const Bureaucrat& other );
 	Bureaucrat& operator= ( const Bureaucrat& other );
 	~Bureaucrat();
 
-	/* getter */
+	/*** getter ***/
 	int					getGrade( void ) const;
 	const std::string&	getName( void ) const;
 
-	/* public methods */
+	/*** public methods ***/
 	void			incrementGrade();
 	void			decrementGrade();
 
-	/* exception class with what() method override */
+	/*** exception class with what() method override ***/
 	class	GradeTooHighException : public std::exception
 	{
 	public:
-		/* public methods */
+		/*** public methods ***/
 		const char*	what() const throw()
 		{
 			return "Grade too high!";

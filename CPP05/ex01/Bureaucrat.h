@@ -11,32 +11,32 @@ class Form;
 class Bureaucrat
 {
 public:
-	/* costructor */
+	/*** costructor ***/
 	Bureaucrat( const std::string& name, int grade );
-	/* copy costructor */
+	/*** copy costructor ***/
 	Bureaucrat( const Bureaucrat& other );
-	/* assignment operator */
+	/*** assignment operator ***/
 	Bureaucrat& operator= ( const Bureaucrat& other );
-	/* destructor */
+	/*** destructor ***/
 	~Bureaucrat();
 
-	/* getter */
+	/*** getter ***/
 	const std::string&	getName( void ) const;
 	int					getGrade( void ) const;
 
-	/* public methods */
+	/*** public methods ***/
 	void			incrementGrade();
 	void			decrementGrade();
 	void			signForm( Form& form ) const;
 
-	/* exception class with what() method override */
+	/*** exception class with what() method override ***/
 	class	GradeTooHighException : public std::exception
 	{
 	public:
-		/* public methods */
+		/*** public methods ***/
 		const char*	what() const throw()
 		{
-			return "Grade too high!";
+			return "Bureaucrat grade too high!";
 		}
 	};
 
@@ -45,7 +45,7 @@ public:
 	public:
 		const char*	what() const throw()
 		{
-			return "Grade too low!";
+			return "Bureaucrat grade too low!";
 		}
 	};
 

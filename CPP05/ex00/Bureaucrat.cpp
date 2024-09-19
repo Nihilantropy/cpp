@@ -1,15 +1,15 @@
 #include "Bureaucrat.h"
 
-/* costructor */
+/*** costructor ***/
 Bureaucrat::Bureaucrat( const std::string& name, int grade ) : _name(name), _grade(grade)
 {
 	checkGrade(_grade);
 }
 
-/* copy costructor */
+/*** copy costructor ***/
 Bureaucrat::Bureaucrat( const Bureaucrat& other ) : _name(other._name), _grade(other._grade) {}
 
-/* assignament operator */
+/*** assignament operator ***/
 Bureaucrat&	Bureaucrat::operator=( const Bureaucrat& other )
 {
 	if (this != &other)
@@ -17,14 +17,14 @@ Bureaucrat&	Bureaucrat::operator=( const Bureaucrat& other )
 	return *this;
 }
 
-/* destructor */
+/*** destructor ***/
 Bureaucrat::~Bureaucrat() {}
 
-/* getter */
+/*** getter ***/
 const std::string&	Bureaucrat::getName( void ) const { return _name; }
 int					Bureaucrat::getGrade( void ) const { return _grade; }
 
-/* public methods */
+/*** public methods ***/
 void	Bureaucrat::incrementGrade()
 {
 	checkGrade(_grade - 1);
@@ -37,7 +37,7 @@ void	Bureaucrat::decrementGrade()
 	_grade++;
 }
 
-/* private methods */
+/*** private methods ***/
 void	Bureaucrat::checkGrade( int grade )
 {
 	if (grade < 1)
@@ -46,7 +46,7 @@ void	Bureaucrat::checkGrade( int grade )
 		throw GradeTooLowException();
 }
 
-/* '<<' operator overload to show more informations */
+/*** '<<' operator overload to show more informations ***/
 std::ostream& operator<<( std::ostream& os, const Bureaucrat& bureaucrat )
 {
 	os << bureaucrat.getName() << ", bureaucrat grade is: " << bureaucrat.getGrade() << std::endl;

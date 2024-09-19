@@ -1,10 +1,10 @@
 #ifndef ROBOMY_REQUEST_FORM_H
 #define ROBOMY_REQUEST_FORM_H
 
-# include "AForm.h"
+# include "Form.h"
 # include <cstdlib>
 
-class RobotomyRequestForm : public AForm
+class RobotomyRequestForm : public Form
 {
 public:
 	/* costructor with target */

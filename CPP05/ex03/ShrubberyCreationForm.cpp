@@ -2,18 +2,18 @@
 
 /*** Constructor ***/
 ShrubberyCreationForm::ShrubberyCreationForm( const std::string& target )
-	: AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
+	: Form("ShrubberyCreationForm", 145, 137), _target(target) {}
 
 /*** Copy constructor ***/
 ShrubberyCreationForm::ShrubberyCreationForm ( const ShrubberyCreationForm& other )
-	: AForm(other), _target(other._target) {}
+	: Form(other), _target(other._target) {}
 
 /*** Assignment operator ***/
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( const ShrubberyCreationForm& other )
 {
 	if (this != &other)
 	{
-		AForm::operator=(other);
+		Form::operator=(other);
 		_target = other._target;
 	}
 	return *this;
@@ -36,7 +36,7 @@ void	ShrubberyCreationForm::execute( const Bureaucrat& executor ) const
 	
 	std::ofstream	outfile((_target + "_shrubbery").c_str());
 	if (!outfile.is_open())
-		throw WrongFileOpeningException();
+		throw FileOpeningException();
 
 	outfile << "     ccee88oo\n"
 			<< "  C8O8O8Q8PoOb o8oo\n"

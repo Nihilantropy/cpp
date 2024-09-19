@@ -3,7 +3,7 @@
 
 # include "AForm.h"
 
-class PresidentialPardonForm : public AForm
+class PresidentialPardonForm : public Form
 {
 public:
 	/* costructor with target */

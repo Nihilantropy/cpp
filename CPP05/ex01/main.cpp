@@ -50,8 +50,8 @@ int main()
         // Test: Bureaucrat signing a form with insufficient grade
         try {
             Bureaucrat charles("Charles", 50);
-            Form visaForm("Visa Form", 20, 10);
-            charles.signForm(visaForm); // Charles should not be able to sign
+            Form visForm("Visa Form", 20, 10);
+            charles.signForm(visForm); // Charles should not be able to sign
         } catch (const std::exception& e) {
             std::cout << "Exception caught: " << e.what() << std::endl;
         }

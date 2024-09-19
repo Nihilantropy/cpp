@@ -38,13 +38,17 @@ cat <<EOF > $header_file
 class $class_name
 {
 public:
+	/*** costructor ***/
 	$class_name();
+	/*** copy costructor ***/
 	$class_name( const $class_name& other );
+	/*** assignment operator ***/
 	$class_name& operator=( const $class_name& other );
+	/*** destructor ***/
 	~$class_name();
 
 private:
-	// Add private members here
+	/* Add private members here */
 };
 
 #endif
@@ -58,7 +62,7 @@ cat <<EOF > $source_file
 $class_name::$class_name() {}
 
 /***  Copy costructor ***/
-$class_name::$class_name( const $class_name& other ) { *this = other; }
+$class_name::$class_name( const $class_name& other ) {}
 
 /***  assignment operator override ***/
 $class_name& $class_name::operator=( const $class_name& other )

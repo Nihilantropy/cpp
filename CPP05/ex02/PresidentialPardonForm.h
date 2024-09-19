@@ -1,9 +1,9 @@
 #ifndef PRESIDENTIAL_PARDON_FORM_H
 #define PRESIDENTIAL_PARDON_FORM_H
 
-# include "AForm.h"
+# include "Form.h"
 
-class PresidentialPardonForm : public AForm
+class PresidentialPardonForm : public Form
 {
 public:
 	/* costructor with target */

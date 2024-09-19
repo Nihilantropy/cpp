@@ -1,5 +1,5 @@
-#ifndef AFORM_H
-#define AFORM_H
+#ifndef Form_H
+#define Form_H
 
 # include <iostream>
 # include <string>
@@ -9,17 +9,17 @@
 
 class Bureaucrat;
 
-class AForm
+class Form
 {
 public:
 	/*** costructor ***/
-	AForm( const std::string& name, const int gradeToSign, const int grade_toExec );
+	Form( const std::string& name, const int gradeToSign, const int grade_toExec );
 	/*** copy costructor ***/
-	AForm( const AForm& other );
+	Form( const Form& other );
 	/*** assignment operator ***/
-	AForm& operator=( const AForm& other );
+	Form& operator=( const Form& other );
 	/*** destructor ***/
-	virtual ~AForm();
+	virtual ~Form();
 
 	/*** getters ***/
 	const std::string&	getName() const;
@@ -75,6 +75,6 @@ private:
 	void				checkGrade( int grade ) const ;
 };
 
-std::ostream& operator<<( std::ostream& os, const AForm& form );
+std::ostream& operator<<( std::ostream& os, const Form& form );
 
 #endif

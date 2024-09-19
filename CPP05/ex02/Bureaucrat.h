@@ -4,9 +4,9 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
-# include "AForm.h"
+# include "Form.h"
 
-class AForm;
+class Form;
 
 class Bureaucrat
 {
@@ -27,8 +27,8 @@ public:
 	/*** public methods ***/
 	void				incrementGrade();
 	void				decrementGrade();
-	void				signForm( AForm& form ) const;
-	void				executeForm( const AForm& form ) const;
+	void				signForm( Form& form ) const;
+	void				executeForm( const Form& form ) const;
 
 	/*** exception class with what() method override ***/
 	class	GradeTooHighException : public std::exception

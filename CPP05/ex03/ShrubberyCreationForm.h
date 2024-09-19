@@ -3,7 +3,7 @@
 
 # include "AForm.h"
 
-class  ShrubberyCreationForm : public AForm
+class  ShrubberyCreationForm : public Form
 {
 public:
 	/* costructor with target */
@@ -18,7 +18,7 @@ public:
 	/* public method override */
 	void	execute( const Bureaucrat& executor ) const;
 
-	class WrongFileOpeningException : public std::exception
+	class FileOpeningException : public std::exception
 	{
 	public:
 		/* public methods */

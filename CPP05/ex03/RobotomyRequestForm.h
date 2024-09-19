@@ -4,7 +4,7 @@
 # include "AForm.h"
 # include <cstdlib>
 
-class RobotomyRequestForm : public AForm
+class RobotomyRequestForm : public Form
 {
 public:
 	/* costructor with target */

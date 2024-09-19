@@ -30,14 +30,21 @@ public:
 	};
 private:
 	/*** private methods ***/
-    /* static function for form creation */
-    static Form* createRobotomyRequest(const std::string& target);
-    static Form* createShrubberyCreation(const std::string& target);
-    static Form* createPresidentialPardon(const std::string& target);
+	/* static function for form creation */
+	static Form* createRobotomyRequest(const std::string& target);
+	static Form* createShrubberyCreation(const std::string& target);
+	static Form* createPresidentialPardon(const std::string& target);
 
-    /* array of pointers to member functions */
-    typedef Form* (Intern::*FormCreator)(const std::string&) const;
-    static const std::pair<const char*, FormCreator> formCreators[];
+	/* array of pointers to member functions */
+	typedef Form* (Intern::*FormCreator)(const std::string&) const;
+	/* pairing the form name with the corrisponding 'createForm' function */
+	struct FormMapping
+	{
+		const char* _name;
+		FormCreator _creator;
+	};
+
+	static const FormMapping	formMappings[];
 };
 
 #endif

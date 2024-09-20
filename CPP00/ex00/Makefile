@@ -2,8 +2,8 @@
 NAME = megaphone
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC_DIR = srcs
-INC_DIR = include
+SRC_DIR = ./
+INC_DIR = ./
 OBJ_DIR = obj
 
 # Find all .cpp files in the srcs directory
@@ -21,7 +21,7 @@ $(NAME): $(OBJS)
 
 # Rule to compile .cpp files into .o files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(OBJ_DIR)  # Create the obj directory if it doesn't exist
+	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # Rule to clean up generated files

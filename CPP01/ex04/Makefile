@@ -2,8 +2,8 @@
 NAME = sedisforlosers
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC_DIR = srcs
-INC_DIR = include
+SRC_DIR = ./
+INC_DIR = ./
 OBJ_DIR = obj
 
 # Find all .cpp files in the srcs directory

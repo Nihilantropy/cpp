@@ -1,26 +1,40 @@
 #ifndef SCALARCONVERTER_H
 #define SCALARCONVERTER_H
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <iomanip>
+#include <limits>
+#include <cstdlib>
+#include <cerrno>
 
 class ScalarConverter
 {
 public:
-	/*** constructor ***/
-	ScalarConverter();
-	/*** copy constructor ***/
-	ScalarConverter( const ScalarConverter& other );
-	/*** assignment operator ***/
-	 ScalarConverter& operator=( const ScalarConverter& other );
+
 	/*** destructor ***/
 	~ScalarConverter();
 
 	/*** public methods ***/
-	void*	convert( const std::string& literal );
+	static void	convert( const std::string& literal );
 
 private:
-	/* Add private members here */
+	/*** private constructor ***/
+	ScalarConverter();
+
+	/*** private methods ***/
+	/* check type */
+	static int	literalType( const std::string& literal );
+	static bool	isChar( const std::string& literal );
+	static bool	isInt( const std::string& literal );
+	static bool isFloat( const std::string& literal );
+	static bool isDouble( const std::string& literal );
+
+	/* print type */
+	static void	printChar( double value );
+	static void	printInt( double value );
+	static void	printFloat( double value );
+	static void	printDouble( double value );
+
 };
 
 #endif

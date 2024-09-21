@@ -87,13 +87,14 @@ bool	ScalarConverter::isInt( const std::string& literal )
 
 /*
 **	return true if all condition are matched:
-**	1) pointer end is used to check where the conversion terminates
-**	2) function strtof is used to convert literal string to float
-**	3) end != 'f' check if there's the 'f' char that indicates
+**	1) return true if parameter is a pseudoliteral (nan, +inf, -inf)
+**	2) pointer end is used to check where the conversion terminates
+**	3) function strtof is used to convert literal string to float
+**	4) end != 'f' check if there's the 'f' char that indicates
 **		the literal float type
-**	4) *(end + 1) != '\0' check if there's something else after the 'f' char
-**	5) errno == ERANGE verify if there was an overflow or underflow error
-**	6) return false if either one of the above condition is matched, otherwise return true
+**	5) *(end + 1) != '\0' check if there's something else after the 'f' char
+**	6) errno == ERANGE verify if there was an overflow or underflow error
+**	7) return false if either one of the above condition is matched, otherwise return true
 */
 bool	ScalarConverter::isFloat( const std::string& literal )
 {
@@ -110,11 +111,12 @@ bool	ScalarConverter::isFloat( const std::string& literal )
 
 /*
 **	return true if all condition are matched:
-**	1) pointer end is used to check where the conversion terminates
-**	2) function strtod is used to convert literal string to double
-**	3) *end != '\0' check if there's something else after string convertion
-**	4) errno == ERANGE verify if there was an overflow or underflow error
-**	5) return false if either one of the above condition is matched, otherwise return true
+**	1) return true if parameter is a pseudoliteral (nan, +inf, -inf)
+**	2) pointer end is used to check where the conversion terminates
+**	3) function strtod is used to convert literal string to double
+**	4) *end != '\0' check if there's something else after string convertion
+**	5) errno == ERANGE verify if there was an overflow or underflow error
+**	6) return false if either one of the above condition is matched, otherwise return true
 */
 bool	ScalarConverter::isDouble( const std::string& literal )
 {
@@ -130,6 +132,12 @@ bool	ScalarConverter::isDouble( const std::string& literal )
 }
 
 /* print type */
+
+/*
+**	handle char print with specific checks wether value
+**	is not a number (isnan) and if is infinity (isnif)
+**	cast the value to char before print
+*/
 void	ScalarConverter::printChar( double value )
 {
 	std::cout << "char: ";
@@ -139,6 +147,11 @@ void	ScalarConverter::printChar( double value )
 		std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
 }
 
+/*
+**	handle int print with specific checks wether value
+**	is not a number (isnan) and if is infinity (isnif)
+**	cast the value to int before print
+*/
 void	ScalarConverter::printInt( double value )
 {
 	std::cout << "int: ";
@@ -148,6 +161,12 @@ void	ScalarConverter::printInt( double value )
 		std::cout << static_cast<int>(value) << std::endl;
 }
 
+/*
+**	handle float print with specific checks wether value
+**	is not a number (isnan) nad if is infinity (isnif)
+**	printing nanf, +inf or -inf
+**	cast the value to float before print
+*/
 void	ScalarConverter::printFloat( double value )
 {
 	std::cout << "float: ";
@@ -161,6 +180,12 @@ void	ScalarConverter::printFloat( double value )
 		std::cout << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
 }
 
+/*
+**	handle double print with specific checks wether value
+**	is not a number (isnan) nad if is infinity (isnif)
+**	printing nan, +inf or -inf
+**	cast the value to double before print
+*/
 void	ScalarConverter::printDouble( double value )
 {
 	std::cout << "double: ";

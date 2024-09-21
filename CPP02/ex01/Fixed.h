@@ -7,16 +7,16 @@
 class Fixed
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Fixed();
-	/*** costructor with int parameter ***/
+	/*** constructor with int parameter ***/
 	Fixed( const int );
-	/*** costructor with float parameter ***/
+	/*** constructor with float parameter ***/
 	Fixed( const float );
-	/*** copy costructor ***/
-	Fixed(const Fixed&);
+	/*** copy constructor ***/
+	Fixed( const Fixed& other );
 	/*** assignment operator ***/
-	Fixed& operator=(const Fixed&);
+	Fixed& operator=( const Fixed& other );
 	/*** destructor ***/
 	~Fixed();
 
@@ -34,6 +34,7 @@ private:
 	static const int	_fractValue = 8;
 };
 
+/*** '<<' operator overload ***/
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif

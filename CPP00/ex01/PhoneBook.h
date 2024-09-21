@@ -8,17 +8,26 @@
 class PhoneBook
 {
 public:
+	/*** constructor ***/
 	PhoneBook();
+	/*** copy constructor ***/
+	PhoneBook( const PhoneBook& other );
+	/*** assignment operator ***/
+	PhoneBook& operator=(const PhoneBook& other );
+	/*** destructor ***/
 	~PhoneBook();
 	
-	void	addNewContact();
-	void	searchContact();
-	void	exitPhoneBook();
+	/*** public methods ***/
+	void	addNewContact( void );
+	void	searchContact( void );
+	void	exitPhoneBook( void );
 
 private:
-	static const int	max_contact = 8;
-	Contact				contacts[max_contact];
-	int					contact_count;
+	static const int	_max_contact = 8;
+	Contact				_contacts[_max_contact];
+	int					_contact_count;
+
+	/*** private methods ***/
 	void 				showAllContacts() const;
 	void 				showContactDetails(int index) const;
 };

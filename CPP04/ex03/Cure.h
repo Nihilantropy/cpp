@@ -6,9 +6,9 @@
 class Cure : public AMateria
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Cure();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Cure( Cure const & other );
 	/*** assignment operator ***/
 	Cure& operator=( Cure const & other );

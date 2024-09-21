@@ -10,9 +10,9 @@
 class Character : public ICharacter
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Character( const std::string& name );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Character( const Character& other );
 	/*** assignment operator ***/
 	Character& operator=( const Character& other );

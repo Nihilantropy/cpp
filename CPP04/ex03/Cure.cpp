@@ -1,9 +1,9 @@
 #include "Cure.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Cure::Cure() : AMateria("cure") {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Cure::Cure( const Cure& other ) : AMateria(other) {}
 
 /*** assignment operator ***/

@@ -1,4 +1,4 @@
-#include "../include/ClapTrap.h"
+#include "ClapTrap.h"
 
 int main() {
 	ClapTrap claptrap("CL4P-Vx27");

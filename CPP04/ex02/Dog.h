@@ -7,9 +7,9 @@
 class Dog : public AAnimal
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Dog();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Dog( const Dog& other );
 	/*** assignment operator ***/
 	Dog& operator=( const Dog& other );

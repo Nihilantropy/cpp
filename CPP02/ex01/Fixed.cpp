@@ -24,7 +24,7 @@ Fixed::Fixed( const float value )
 }
 
 /*** Copy constructor to make *this object a copy of other object ***/
-Fixed::Fixed(const Fixed& other)
+Fixed::Fixed( const Fixed& other )
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
@@ -39,10 +39,13 @@ Fixed& Fixed::operator=(const Fixed& other)
 	return *this;
 }
 
-/*** getter method to extract the private data value ***/
+/*** destructor ***/
+Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
+
+/*** getter ***/
 int		Fixed::getRawBits( void ) const { return _fixedValue; }
 
-/*** setter method to set the private data value ***/
+/*** setter ***/
 void	Fixed::setRawBits( int const raw ) { _fixedValue = raw; }
 
 /*	toFloat:
@@ -55,11 +58,9 @@ float	Fixed::toFloat( void ) const { return ((float)_fixedValue / (1 << _fractVa
 */
 int		Fixed::toInt( void ) const { return ((int)_fixedValue >> _fractValue); }
 
-/*** Insert (<<) operator overload ***/
+/*** '<<' operator overload ***/
 std::ostream&	operator<<( std::ostream& out, const Fixed& fixed )
 {
 	out << fixed.toFloat();
 	return out;
 }
-
-Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }

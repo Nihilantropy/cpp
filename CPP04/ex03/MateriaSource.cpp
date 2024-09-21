@@ -7,7 +7,7 @@ MateriaSource::MateriaSource()
 		_slot[i] = NULL; 
 }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 MateriaSource::MateriaSource( const MateriaSource& other )
 {
 	for (int i = 0; i < SLOT_CAP; i++)

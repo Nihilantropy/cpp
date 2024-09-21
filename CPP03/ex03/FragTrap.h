@@ -6,10 +6,16 @@
 class FragTrap : virtual public ClapTrap
 {
 public:
-	/*** costructor ***/
-	FragTrap( std::string name = "Default FragTrap" );
+	/*** default constructor ***/
+	FragTrap();
+	/*** constructor ***/
+	FragTrap( std::string name );
+	/*** copy constructor ***/
+	FragTrap( const FragTrap& other );
+	/*** assignment operator ***/
+	FragTrap& operator=( const FragTrap& other );
 	/*** destructor ***/
-	~FragTrap();
+	virtual ~FragTrap();
 
 	/*** public methods ***/
 	void	highFivesGuys( void );

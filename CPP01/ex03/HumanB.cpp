@@ -1,15 +1,36 @@
 #include "HumanB.h"
 
+/*** constructor ***/
 HumanB::HumanB( const std::string& name) : _name(name), _weapon(NULL) {}
 
+/*** copy constructor ***/
+HumanB::HumanB( const HumanB& other )
+{
+	this->_name = other._name;
+	this->_weapon = other._weapon;
+}
+
+/*** assignment operator ***/
+HumanB& HumanB::operator=( const HumanB& other )
+{
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_weapon = other._weapon;
+	}
+	return *this;
+}
+
+/*** destructor ***/
 HumanB::~HumanB() {}
 
-/*** public methods ***/
+/*** setter ***/
 void	HumanB::setWeapon( Weapon& weapon )
 {
 	_weapon = &weapon;
 }
 
+/*** public methods ***/
 void	HumanB::attack() const
 {
  	if (_weapon)

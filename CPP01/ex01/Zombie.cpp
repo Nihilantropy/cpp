@@ -1,7 +1,21 @@
 # include "Zombie.h"
 
-/*** Costructor ***/
+/*** constructor ***/
 Zombie::Zombie() : _name("") {}
+
+/*** copy constructor ***/
+Zombie::Zombie( const Zombie& other )
+{
+	this->_name = other._name;
+}
+
+/*** assignment operator ***/
+Zombie&	Zombie::operator=( const Zombie& other )
+{
+	if (this != &other)
+		this->_name = other._name;
+	return *this;
+}
 
 /*** Destructor ***/
 Zombie::~Zombie()
@@ -9,13 +23,16 @@ Zombie::~Zombie()
 	std::cout << "Zombie " << this->_name << " is dead" << std::endl;
 }
 
-/*** public set name method ***/
-void	Zombie::setName( std::string name )
+/*** getter ***/
+const std::string	Zombie::getName( void ) const { return _name; }
+
+/*** setters ***/
+void	Zombie::setName( std::string& name )
 {
 	_name = name;
 }
 
-/*** private methods ***/
+/*** public methods ***/
 void	Zombie::announce( void )
 {
 	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;

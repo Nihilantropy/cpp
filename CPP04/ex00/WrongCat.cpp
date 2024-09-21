@@ -1,13 +1,13 @@
 #include "WrongCat.h"
 
-/*** costructor ***/
+/*** constructor ***/
 WrongCat::WrongCat()
 {
 	_type = "WrongCat";
-	std::cout << "WrongCat costructor called" << std::endl;
+	std::cout << "WrongCat constructor called" << std::endl;
 }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 WrongCat::WrongCat( const WrongCat& other ) : WrongAnimal(other) {}
 
 /*** assignment operator ***/

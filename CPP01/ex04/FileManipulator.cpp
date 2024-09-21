@@ -1,14 +1,34 @@
 #include "FileManipulator.h"
 
-/*** costructor ***/
+/*** constructor ***/
 FileManipulator::FileManipulator( const std::string& filename, const std::string& s1, const std::string& s2 )
 	: _filename(filename), _s1(s1), _s2(s2) {}
+
+/*** copy constructor ***/
+FileManipulator::FileManipulator( const FileManipulator& other )
+{
+	this->_filename = other._filename;
+	this->_s1 = other._s1;
+	this->_s2 = other._s2;
+}
+
+/*** assignment operator ***/
+FileManipulator& FileManipulator::operator=( const FileManipulator& other )
+{
+	if (this != &other)
+	{
+		this->_filename = other._filename;
+		this->_s1 = other._s1;
+		this->_s2 = other._s2;
+	}
+	return *this;
+}
 
 /*** destructor ***/
 FileManipulator::~FileManipulator() {}
 
 /*** public methods ***/
-bool	FileManipulator::processFile()
+bool	FileManipulator::processFile( void )
 {
 	std::ifstream	inFile(_filename.c_str());
 	if (!inFile.is_open())

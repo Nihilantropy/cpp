@@ -7,10 +7,18 @@
 class Weapon
 {
 public:
+	/*** constructor ***/
 	Weapon( const std::string& type );
+	/*** copy constructor ***/
+	Weapon( const Weapon& other );
+	/*** assignment operator ***/
+	Weapon& operator=( const Weapon& other );
+	/*** destructor ***/
 	~Weapon();
 
-	const std::string&	getType() const;
+	/*** getter ***/
+	const std::string&	getType( void ) const;
+	/*** setter ***/
 	void				setType( const std::string& newType );
 
 private:

@@ -1,9 +1,9 @@
 #include "Animal.h"
 
-/*** costructor ***/
-Animal::Animal() : _type("") { std::cout << "Animal costructor called" << std::endl; }
+/*** constructor ***/
+Animal::Animal() : _type("") { std::cout << "Animal constructor called" << std::endl; }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Animal::Animal( const Animal& other ) { *this = other; }
 
 /*** assignment operator ***/

@@ -1,6 +1,6 @@
 #include "AForm.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Form::Form( const std::string& name, const int gradeToSign, const int gradeToExec)
 	: _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
@@ -8,7 +8,7 @@ Form::Form( const std::string& name, const int gradeToSign, const int gradeToExe
 	checkGrade(gradeToExec);
 }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Form::Form( const Form& other )
 	: _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExec(other._gradeToExec) {}
 

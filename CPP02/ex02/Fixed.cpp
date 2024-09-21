@@ -39,6 +39,9 @@ Fixed& Fixed::operator=(const Fixed& other)
 	return *this;
 }
 
+/*** destructor ***/
+Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
+
 /* getter method to extract the private data value */
 int		Fixed::getRawBits( void ) const { return _fixedValue; }
 
@@ -55,17 +58,12 @@ float	Fixed::toFloat( void ) const { return ((float)_fixedValue / (1 << _fractVa
 */
 int		Fixed::toInt( void ) const { return ((int)_fixedValue >> _fractValue); }
 
-/***  comparison operators ***/
+/*** comparison operations ***/
 bool	Fixed::operator>( const Fixed& other ) const { return (this->_fixedValue > other._fixedValue); }
-
 bool	Fixed::operator>=( const Fixed& other ) const { return (this->_fixedValue >= other._fixedValue); }
-
 bool	Fixed::operator<( const Fixed& other ) const { return (this->_fixedValue < other._fixedValue); }
-
 bool	Fixed::operator<=( const Fixed& other ) const { return (this->_fixedValue <= other._fixedValue); }
-
 bool	Fixed::operator==( const Fixed& other ) const { return (this->_fixedValue == other._fixedValue); }
-
 bool	Fixed::operator!=( const Fixed& other ) const { return (this->_fixedValue != other._fixedValue); }
 
 /*** arithmetic operators ***/
@@ -135,7 +133,6 @@ Fixed	Fixed::operator--( int )
 }
 
 /*** min/max methods ***/
-
 /* return a non const reference to the min */
 Fixed&		Fixed::min(Fixed& a, Fixed& b)
 {
@@ -178,5 +175,3 @@ std::ostream&	operator<<( std::ostream& out, const Fixed& fixed )
 	out << fixed.toFloat();
 	return out;
 }
-
-Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }

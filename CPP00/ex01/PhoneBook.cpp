@@ -1,9 +1,30 @@
 #include "PhoneBook.h"
 
-/*	Constructor implementation
-**	Initialize contact_count to 0
-*/
-PhoneBook::PhoneBook() : contact_count(0) {}
+/*** constructor ***/
+PhoneBook::PhoneBook() : _contact_count(0) {}
+
+/*** copy constructor ***/
+PhoneBook::PhoneBook( const PhoneBook& other )
+{
+	this->_contact_count = other._contact_count;
+	this->_contact_count = other._contact_count;
+}
+
+/*** assignment operator ***/
+PhoneBook& PhoneBook::operator=( const PhoneBook& other )
+{
+	if (this != &other)
+	{
+		this->_contact_count = other._contact_count;
+		this->_contact_count = other._contact_count;
+	}
+	return *this;
+}
+
+/*** Destructor ***/
+PhoneBook::~PhoneBook() {}
+
+/*** public methods ***/
 
 /*	addNewContact
 **	Prompts the user to enter details for a new contact, validates input,
@@ -14,7 +35,7 @@ PhoneBook::PhoneBook() : contact_count(0) {}
 **		and the new contact is added to the end of the array. The entire array
 **		is shifted to the left to make room for the new contact.
 */
-void	PhoneBook::addNewContact()
+void	PhoneBook::addNewContact( void )
 {
 	std::string	firstName, lastName, nickname, phoneNumber, darkestSecret;
 
@@ -60,16 +81,16 @@ void	PhoneBook::addNewContact()
 
 	Contact newContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
 
-	if (contact_count < max_contact)
+	if (_contact_count < _max_contact)
 	{
-		contacts[contact_count] = newContact;
-		contact_count++;
+		_contacts[_contact_count] = newContact;
+		_contact_count++;
 	}
 	else
 	{
-		for (int i = 0; i < (max_contact - 1); i++)
-			contacts[i] = contacts[i + 1];
-		contacts[max_contact - 1] = newContact;
+		for (int i = 0; i < (_max_contact - 1); i++)
+			_contacts[i] = _contacts[i + 1];
+		_contacts[_max_contact - 1] = newContact;
 	}
 }
 
@@ -79,7 +100,7 @@ void	PhoneBook::addNewContact()
 **	- If the input is invalid, display an error message and return
 **	- If the input is valid, display the details of the contact at the given index
 */
-void	PhoneBook::searchContact()
+void	PhoneBook::searchContact( void )
 {
 	showAllContacts();
 
@@ -88,7 +109,7 @@ void	PhoneBook::searchContact()
 	std::cout << "Enter the index of the contact to display: ";
 	std::cin >> index;
 
-	if (std::cin.fail() || index < 1 || index > contact_count)
+	if (std::cin.fail() || index < 1 || index > _contact_count)
 	{
 		std::cout << "Invalid index." << std::endl;
 		return ;
@@ -103,7 +124,7 @@ void	PhoneBook::searchContact()
 **	with text right-aligned. If a field's content is longer than the column width,
 **	it is truncated and followed by a dot. The index is displayed starting from 1.
 */
-void	PhoneBook::showAllContacts() const
+void	PhoneBook::showAllContacts( void ) const
 {
 	std::cout << std::setw(10) << std::right << "Index" << " | "
 			  << std::setw(10) << std::right << "First Name" << " | "
@@ -111,12 +132,12 @@ void	PhoneBook::showAllContacts() const
 			  << std::setw(10) << std::right << "Nickname" << std::endl;
 	std::cout << "----------|------------|------------|------------" << std::endl;
 
-	for (int i = 0; i < contact_count; ++i)
+	for (int i = 0; i < _contact_count; ++i)
 	{
 		std::cout << std::setw(10) << std::right << (i + 1) << " | "
-				  << std::setw(10) << std::right << (contacts[i].getFirstName().substr(0, 9) + (contacts[i].getFirstName().length() > 10 ? "." : "")) << " | "
-				  << std::setw(10) << std::right << (contacts[i].getLastName().substr(0, 9) + (contacts[i].getLastName().length() > 10 ? "." : "")) << " | "
-				  << std::setw(10) << std::right << (contacts[i].getNickname().substr(0, 9) + (contacts[i].getNickname().length() > 10 ? "." : "")) << std::endl;
+				  << std::setw(10) << std::right << (_contacts[i].getFirstName().substr(0, 9) + (_contacts[i].getFirstName().length() > 10 ? "." : "")) << " | "
+				  << std::setw(10) << std::right << (_contacts[i].getLastName().substr(0, 9) + (_contacts[i].getLastName().length() > 10 ? "." : "")) << " | "
+				  << std::setw(10) << std::right << (_contacts[i].getNickname().substr(0, 9) + (_contacts[i].getNickname().length() > 10 ? "." : "")) << std::endl;
 	}
 }
 
@@ -127,7 +148,7 @@ void	PhoneBook::showAllContacts() const
 */
 void	PhoneBook::showContactDetails(int index) const
 {
-	const Contact& contact = contacts[--index];
+	const Contact& contact = _contacts[--index];
 	
 	std::cout << "First Name: " << contact.getFirstName() << std::endl
 			  << "Last Name: " << contact.getLastName() << std::endl
@@ -144,8 +165,3 @@ void	PhoneBook::exitPhoneBook()
 {
 	std::cout << "Exiting phone book. Goodbye!" << std::endl;
 }
-
-/*	Destructor implementation
-**	No dynamic memory allocation, so no need to delete anything
-*/
-PhoneBook::~PhoneBook() {}

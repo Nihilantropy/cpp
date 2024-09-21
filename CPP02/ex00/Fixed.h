@@ -6,13 +6,19 @@
 class Fixed
 {
 public:
+	/*** constructor ***/
 	Fixed();
-	Fixed(const Fixed&);
-	Fixed& operator=(const Fixed&);
+	/*** copy constructor ***/
+	Fixed( const Fixed& other );
+	/*** assignment operator ***/
+	Fixed& operator=( const Fixed& other );
+	/*** destructor ***/
 	~Fixed();
 
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	/*** getter ***/
+	const int		getRawBits( void ) const;
+	/*** setter ***/
+	void			setRawBits( int const raw );
 
 private:
 	int					_fixedValue;

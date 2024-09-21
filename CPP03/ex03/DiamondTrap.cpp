@@ -1,11 +1,23 @@
 #include "DiamondTrap.h"
 
 /*** costrucotr ***/
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), _name(name)
+DiamondTrap::DiamondTrap( const std::string& name )
+	: ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
 {
 	_hitPoints = FragTrap::getEnergyPoints();
 	_energyPoints = ScavTrap::getEnergyPoints();
 	_attackDamage = FragTrap::getAttackDamage();
+}
+
+/*** copy constructor ***/
+DiamondTrap::DiamondTrap( const DiamondTrap& other ) : ClapTrap(other), ScavTrap(other), FragTrap(other) {}
+
+/*** assignment operator ***/
+DiamondTrap& DiamondTrap::operator=( const DiamondTrap& other )
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+	return *this;
 }
 
 /*** destructor ***/

@@ -1,9 +1,9 @@
 #include "Ice.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Ice::Ice() : AMateria("ice") {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Ice::Ice( const Ice& other ) : AMateria(other) {}
 
 /*** assignment operator ***/

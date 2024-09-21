@@ -8,11 +8,20 @@
 class Zombie
 {
 public:
+	/*** constructor ***/
 	Zombie();
+	/*** copy constructor ***/
+	Zombie( const Zombie& other );
+	/*** assignment operator ***/
+	Zombie& operator=( const Zombie& other );
+	/*** Destructor ***/
 	~Zombie();
 
-	void	setName( std::string name );
-	void	announce( void );
+	/*** getter ***/
+	const std::string	getName( void ) const;
+	/*** setter ***/
+	void				setName( std::string& name );
+	void				announce( void );
 
 private:
 	std::string	_name;

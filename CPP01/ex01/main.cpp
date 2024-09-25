@@ -1,4 +1,5 @@
-# include "Zombie.h"
+#include "Zombie.h"
+#include <typeinfo>
 
 int	main(int argc, char **argv)
 {
@@ -6,13 +7,30 @@ int	main(int argc, char **argv)
 	int			N;
 	std::string	name;
 
-	if (argc == 1)
+	if (argc != 3)
 	{
-		std::cerr << "Provide the horde number and name." << std::endl;
+		std::cerr << "Usage\n"
+					<< "./moarbrainz horde_number(ex. 10) horde_name(ex. \"Giampiero\")"
+					<< std::endl;
 		return 1;
 	}
-	N = std::atoi(argv[1]);
+	N = atoi(argv[1]);
+	if (N < 1 || N > 9999)
+	{
+		std::cerr << "Horde number must range from 1 to 9999 for humanity's sake" << std::endl;
+		return 1;
+	}
 	name = argv[2];
+	if (name.length() > 20)
+	{
+		std::cerr << "Parent sure hated horde... give it a shorter name" << std::endl;
+		return 1;
+	}
+	if (name.empty())
+	{
+		std::cerr << "Use a real name!" << std::endl;
+		return 1;
+	}
 	horde = zombieHorde(N, name);
 	if (!horde)
 	{

@@ -19,7 +19,7 @@ int main()
 	while (true)
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-		std::cin >> command;
+		std::getline(std::cin >> std::ws, command);
 
 		switch (commandToOption(command))
 		{
@@ -34,7 +34,7 @@ int main()
 				return 0;
 
 			default:
-				std::cout << "Invalid command. Please try again." << std::endl;
+				std::cerr << "Invalid command. Please try again." << std::endl;
 				break ;
 		}
 	}

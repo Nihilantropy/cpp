@@ -20,6 +20,8 @@ public:
 	const std::string	getName( void ) const;
 	/*** setter ***/
 	void				setName( std::string& name );
+
+	/*** public methods ***/
 	void				announce( void );
 
 private:

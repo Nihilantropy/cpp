@@ -94,6 +94,10 @@ void	PhoneBook::addNewContact( void )
 	}
 }
 
+# include <iostream>
+# include <string>
+# include <stdlib.h>
+
 /*	searchContact
 **	- Show the list of all contacts in the phone book, then prompt the user
 **	- Ask the user to enter the index of the contact they want to display
@@ -104,14 +108,15 @@ void	PhoneBook::searchContact( void )
 {
 	showAllContacts();
 
-	int index;
+	std::string	input;
 
 	std::cout << "Enter the index of the contact to display: ";
-	std::cin >> index;
+	std::getline(std::cin >> std::ws, input);
 
+	int	index = atoi((input.c_str()));
 	if (std::cin.fail() || index < 1 || index > _contact_count)
 	{
-		std::cout << "Invalid index." << std::endl;
+		std::cerr << "Invalid index." << std::endl;
 		return ;
 	}
 

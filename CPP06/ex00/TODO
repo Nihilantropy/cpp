@@ -1,2 +1,0 @@
-Check if can use .length() .isprint() etc... function.
-Redo the check for isnan and isinf if those functions are not allowed.

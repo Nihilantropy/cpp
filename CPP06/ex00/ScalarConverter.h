@@ -30,10 +30,10 @@ private:
 	static bool isDouble( const std::string& literal );
 
 	/* print type */
-	static void	printChar( double value );
-	static void	printInt( double value );
-	static void	printFloat( double value );
-	static void	printDouble( double value );
+	static void	printChar( double value, short flag );
+	static void	printInt( double value, short flag );
+	static void	printFloat( double value, short flag );
+	static void	printDouble( double value, short flag );
 
 };
 

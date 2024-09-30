@@ -1,10 +1,10 @@
 #include "ScalarConverter.h"
 
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
 	if (argc != 2)
 	{
-		std::cerr << "Usage: ./convert <literal>" << std::endl;
+		std::cerr << "Usage:\n./convert <literal>" << std::endl;
 		return 1;
 	}
 

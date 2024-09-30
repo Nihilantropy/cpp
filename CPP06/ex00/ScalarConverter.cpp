@@ -10,20 +10,34 @@ ScalarConverter::~ScalarConverter() {}
 /*** public methods ***/
 void	ScalarConverter::convert( const std::string& literal )
 {
-	double	value;
+	double		value;
+	short		flag;
+	int			type;
 
-	switch (literalType(literal))
+	value = 0;
+	flag = -1;
+	type = literalType(literal);
+	switch (type)
 	{
 		case 0:
-			value = static_cast<double>(literal[0]);
+			flag = 0;
 			break;
 		case 1:
-			value = std::strtol(literal.c_str(), NULL, 10);
+			flag = 1;
 			break;
 		case 2:
-			value = std::strtof(literal.c_str(), NULL);
+			flag = 2;
 			break;
 		case 3:
+			value = static_cast<double>(literal[0]);
+			break;
+		case 4:
+			value = std::strtol(literal.c_str(), NULL, 10);
+			break;
+		case 5:
+			value = std::strtof(literal.c_str(), NULL);
+			break;
+		case 6:
 			value = std::strtod(literal.c_str(), NULL);
 			break;
 		case -1:
@@ -31,10 +45,10 @@ void	ScalarConverter::convert( const std::string& literal )
 			return;
 	}
 
-	printChar(value);
-	printInt(value);
-	printFloat(value);
-	printDouble(value);
+	printChar(value, flag);
+	printInt(value, flag);
+	printFloat(value, flag);
+	printDouble(value, flag);
 	
 }
 
@@ -43,14 +57,20 @@ void	ScalarConverter::convert( const std::string& literal )
 /* check type */
 int	ScalarConverter::literalType( const std::string& literal )
 {
-	if (isChar(literal))
+	if (literal == "+inf" || literal == "inf")
 		return 0;
-	else if (isInt(literal))
+	else if (literal == "-inf")
 		return 1;
-	else if (isFloat(literal))
+	else if (literal == "nan")
 		return 2;
-	else if (isDouble(literal))
+	else if (isChar(literal))
 		return 3;
+	else if (isInt(literal))
+		return 4;
+	else if (isFloat(literal))
+		return 5;
+	else if (isDouble(literal))
+		return 6;
 	else
 		return -1;
 }
@@ -99,10 +119,9 @@ bool	ScalarConverter::isInt( const std::string& literal )
 bool	ScalarConverter::isFloat( const std::string& literal )
 {
 	char	*end;
-	
-	if (literal == "nan" || literal == "+inf" || literal == "-inf")
-		return true;
 
+	if (std::isspace(literal[0]))
+		return false;
 	std::strtof(literal.c_str(), &end);
 	if (*end != 'f' || *(end + 1) != '\0' || errno == ERANGE)
 		return false;
@@ -121,10 +140,9 @@ bool	ScalarConverter::isFloat( const std::string& literal )
 bool	ScalarConverter::isDouble( const std::string& literal )
 {
 	char	*end;
-	
-	if (literal == "nan" || literal == "+inf" || literal == "-inf")
-		return true;
 
+	if (std::isspace(literal[0]))
+		return false;
 	std::strtod(literal.c_str(), &end);
 	if (*end != '\0' || errno == ERANGE)
 		return false;
@@ -138,10 +156,10 @@ bool	ScalarConverter::isDouble( const std::string& literal )
 **	is not a number (isnan) and if is infinity (isnif)
 **	cast the value to char before print
 */
-void	ScalarConverter::printChar( double value )
+void	ScalarConverter::printChar( double value, short flag )
 {
 	std::cout << "char: ";
-	if (std::isnan(value) || std::isinf(value) || value < 0 || value > 127 || !std::isprint(static_cast<int>(value)))
+	if (flag != -1 || (value < 0 || value > 127 || !std::isprint(static_cast<int>(value))))
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
@@ -152,10 +170,10 @@ void	ScalarConverter::printChar( double value )
 **	is not a number (isnan) and if is infinity (isnif)
 **	cast the value to int before print
 */
-void	ScalarConverter::printInt( double value )
+void	ScalarConverter::printInt( double value, short flag )
 {
 	std::cout << "int: ";
-	if (std::isnan(value) || std::isinf(value) || value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
+	if (flag != -1 || (value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max()))
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(value) << std::endl;
@@ -167,13 +185,13 @@ void	ScalarConverter::printInt( double value )
 **	printing nanf, +inf or -inf
 **	cast the value to float before print
 */
-void	ScalarConverter::printFloat( double value )
+void	ScalarConverter::printFloat( double value, short flag )
 {
 	std::cout << "float: ";
-	if (std::isnan(value))
+	if (flag == 2)
 		std::cout << "nanf" << std::endl;
-	else if (std::isinf(value))
-		std::cout << (value > 0 ? "+inff" : "-inff") << std::endl;
+	else if (flag != -1)
+		std::cout << (flag == 0 ? "+inff" : "-inff") << std::endl;
 	else if (value < -std::numeric_limits<float>::max() || value > std::numeric_limits<float>::max())
 		std::cout << "impossible" << std::endl;
 	else
@@ -186,13 +204,13 @@ void	ScalarConverter::printFloat( double value )
 **	printing nan, +inf or -inf
 **	cast the value to double before print
 */
-void	ScalarConverter::printDouble( double value )
+void	ScalarConverter::printDouble( double value, short flag )
 {
 	std::cout << "double: ";
-	if (std::isnan(value))
+	if (flag == 2)
 		std::cout << "nan" << std::endl;
-	else if (std::isinf(value))
-		std::cout << (value > 0 ? "+inf" : "-inf") << std::endl;
+	else if (flag != -1)
+		std::cout << (flag == 0 ? "+inf" : "-inf") << std::endl;
 	else
 		std::cout << std::fixed << std::setprecision(1) << value << std::endl;
 }

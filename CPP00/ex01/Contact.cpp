@@ -6,7 +6,7 @@ Contact::Contact() :	_first_name(""),
 						_phone_number(""),
 						_darkest_secret("") {}
 
-/*** constructor ***/
+/*** costructor ***/
 Contact::Contact(const std::string& first_name,
 					const std::string& last_name,
 					const std::string& nickname,
@@ -18,7 +18,7 @@ Contact::Contact(const std::string& first_name,
 					_phone_number(phone_number),
 					_darkest_secret(darkest_secret) {}
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 Contact::Contact( const Contact& other )
 {
 	this->_first_name = other._first_name;

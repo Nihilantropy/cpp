@@ -7,9 +7,9 @@
 class Cat : public AAnimal
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	Cat();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	Cat( const Cat& other );
 	/*** assignment operator ***/
 	Cat& operator=( const Cat& other );

@@ -6,9 +6,9 @@
 class FragTrap : public ClapTrap
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	FragTrap( std::string name );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	FragTrap( const FragTrap& other );
 	/*** assignment operator ***/
 	FragTrap& operator=( const FragTrap& other );

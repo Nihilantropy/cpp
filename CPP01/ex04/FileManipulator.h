@@ -8,9 +8,9 @@
 class FileManipulator
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	FileManipulator( const std::string& filename, const std::string& s1, const std::string& s2 );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	FileManipulator( const FileManipulator& other );
 	/*** assignment operator ***/
 	FileManipulator& operator=( const FileManipulator& other );

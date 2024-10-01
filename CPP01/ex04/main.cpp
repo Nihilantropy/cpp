@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 
 	FileManipulator	file( filename, s1, s2);
 
-	if (!file.processFile())
+	if (file.processFile() == false)
     {
         std::cerr << "Error processing the file" << std::endl;
         return 1;

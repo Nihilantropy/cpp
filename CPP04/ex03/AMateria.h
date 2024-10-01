@@ -10,9 +10,9 @@ class ICharacter;
 class AMateria
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	AMateria( std::string const & type );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	AMateria( AMateria const & other );
 	/*** assignment operator ***/
 	AMateria& operator=( AMateria const & other );

@@ -1,10 +1,10 @@
 #include "ShrubberyCreationForm.h"
 
-/*** Constructor ***/
+/*** Costructor ***/
 ShrubberyCreationForm::ShrubberyCreationForm( const std::string& target )
 	: Form("ShrubberyCreationForm", 145, 137), _target(target) {}
 
-/*** Copy constructor ***/
+/*** Copy costructor ***/
 ShrubberyCreationForm::ShrubberyCreationForm ( const ShrubberyCreationForm& other )
 	: Form(other), _target(other._target) {}
 

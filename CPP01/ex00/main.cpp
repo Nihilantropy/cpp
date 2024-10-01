@@ -5,19 +5,19 @@ int	main(int argc, char **argv)
 	std::string	zombieName1;
 	std::string	zombieName2;
 
-	if (argc == 1)
+	if (argc <= 1)
 	{
 		zombieName1 = "Eren";
 		zombieName2 = "Sasha";
 	}
-	else if (argc > 1 && argc < 4)
+	else if (argc == 3)
 	{
 		zombieName1 = argv[1];
 		zombieName2 = argv[2];
 	}
 	else
 	{
-		std::cerr << "Give zero name or max 2 names as parameters." << std::endl;
+		std::cerr << "Give 2 names as parameters." << std::endl;
 		return (1);
 	}
 	Zombie	*zombie;

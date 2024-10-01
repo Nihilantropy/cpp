@@ -1,7 +1,7 @@
 #include "ScalarConverter.h"
 #include <cmath>
 
-/***  constructor ***/
+/***  costructor ***/
 ScalarConverter::ScalarConverter() {}
 
 /***  Destructor ***/

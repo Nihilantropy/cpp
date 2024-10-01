@@ -6,9 +6,9 @@
 class HumanA
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	HumanA( const std::string& name, Weapon& weapon );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	HumanA( const HumanA& other );
 	/*** assignment operator ***/
 	HumanA& operator=( const HumanA& other );

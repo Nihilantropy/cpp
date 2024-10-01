@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Fixed.h"
+#include "Fixed.h"
 
 static int	testMain( void );
 static int	subMain( void );
@@ -20,7 +20,7 @@ static int	testMain( void )
 	Fixed c(42.42f);
 	Fixed d(b);
 
-	a = Fixed(1234.4321f);
+	a = Fixed(15);
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;

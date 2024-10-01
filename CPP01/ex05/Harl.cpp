@@ -1,9 +1,9 @@
 #include "Harl.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Harl::Harl() {}
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 Harl::Harl( const Harl& other ) { *this = other; }
 
 /*** assignment operator ***/
@@ -21,7 +21,7 @@ void	Harl::complain( std::string level )
 {
 	std::string	levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 
-	void	(Harl::*actions[])(void) = {
+	void (Harl::*actions[])(void) = {
 		&Harl::_debug,
 		&Harl::_info,
 		&Harl::_warning,

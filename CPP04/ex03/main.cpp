@@ -47,7 +47,7 @@ int main()
 	std::cout << "\n*** test for ICharacter public methods ***\n" << std::endl;
 
 	/*** Character cannot equip materia allocated on the stack (i.e. ice). ***/
-	/*** The AMateria copy constructor makes shallow copy, so don't equip them aswell ***/
+	/*** The AMateria copy costructor makes shallow copy, so don't equip them aswell ***/
 
 	AMateria*	cure2 = new Cure();
 
@@ -114,7 +114,7 @@ int main()
 
 	delete cure4;
 
-	std::cout << "\n*** test the copy constructor ***\n" << std::endl;
+	std::cout << "\n*** test the copy costructor ***\n" << std::endl;
 
 	Character* alex(don);
 

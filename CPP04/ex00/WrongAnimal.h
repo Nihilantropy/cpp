@@ -6,9 +6,9 @@
 class WrongAnimal
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	WrongAnimal();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	WrongAnimal( const WrongAnimal& other );
 	/*** assignment operator ***/
 	WrongAnimal& operator=( const WrongAnimal& other );

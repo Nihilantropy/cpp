@@ -1,13 +1,13 @@
 #include "Cat.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Cat::Cat()
 {
 	_type = "Cat";
-	std::cout << "Cat constructor called" << std::endl;
+	std::cout << "Cat costructor called" << std::endl;
 }
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 Cat::Cat( const Cat& other ) : Animal(other) {}
 
 /*** assignment operator ***/

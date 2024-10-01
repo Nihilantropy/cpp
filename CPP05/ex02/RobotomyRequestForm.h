@@ -7,9 +7,9 @@
 class RobotomyRequestForm : public Form
 {
 public:
-	/* constructor with target */
+	/* costructor with target */
 	RobotomyRequestForm( const std::string& target );
-	/* copy constructor */
+	/* copy costructor */
 	RobotomyRequestForm( const RobotomyRequestForm& other );
 	/* assignment operator */
 	RobotomyRequestForm& operator=( const RobotomyRequestForm& other );

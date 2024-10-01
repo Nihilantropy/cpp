@@ -6,9 +6,9 @@
 class Fixed
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	Fixed();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	Fixed( const Fixed& other );
 	/*** assignment operator ***/
 	Fixed& operator=( const Fixed& other );
@@ -16,7 +16,7 @@ public:
 	~Fixed();
 
 	/*** getter ***/
-	const int		getRawBits( void ) const;
+	int		getRawBits( void ) const;
 	/*** setter ***/
 	void			setRawBits( int const raw );
 

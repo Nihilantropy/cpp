@@ -6,9 +6,9 @@
 class Ice : public AMateria
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	Ice();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	Ice( Ice const & other );
 	/*** assignment operator ***/
 	Ice& operator=( Ice const & other );

@@ -1,16 +1,16 @@
 #include "ClapTrap.h"
 
-/*** constructor ***/
+/*** costructor ***/
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap constructor called" << std::endl;
+	std::cout << "ClapTrap costructor called" << std::endl;
 }
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 ClapTrap::ClapTrap( const ClapTrap& other )
 {
 	*this = other;
-	std::cout << "ClapTrap copy constructor called for " << _name << std::endl;
+	std::cout << "ClapTrap copy costructor called for " << _name << std::endl;
 }
 
 /*** assignment operator ***/
@@ -30,13 +30,15 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 /*** destructor ***/
 ClapTrap::~ClapTrap() { std::cout << "ClapTrap Destructor called!" << std::endl; }
 
-/*** getter and setter methods ***/
+/*** getter ***/
 std::string	ClapTrap::getName( void ) const { return _name; }
 int			ClapTrap::getHitPoints( void ) const { return _hitPoints; }
-void		ClapTrap::setHitPoints( int hitPoints ) { _hitPoints = hitPoints; }
 int			ClapTrap::getEnergyPoints( void ) const { return _energyPoints; }
-void		ClapTrap::setEnergyPoints( int energyPoints ) { _energyPoints = energyPoints; }
 int			ClapTrap::getAttackDamage( void ) const { return _attackDamage; }
+
+/*** setter ***/
+void		ClapTrap::setHitPoints( int hitPoints ) { _hitPoints = hitPoints; }
+void		ClapTrap::setEnergyPoints( int energyPoints ) { _energyPoints = energyPoints; }
 void		ClapTrap::setAttackDamage( int attackDamage ) { _attackDamage = attackDamage; }
 
 /*** public methods ***/

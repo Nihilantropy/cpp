@@ -1,15 +1,15 @@
 #include "Fixed.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Fixed::Fixed() : _fixedValue(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default costructor called" << std::endl;
 }
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 Fixed::Fixed( const Fixed& other )
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy costructor called" << std::endl;
 	*this = other;
 }
 
@@ -18,7 +18,7 @@ Fixed& Fixed::operator=( const Fixed& other )
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-		this->_fixedValue = other._fixedValue;
+		this->_fixedValue = other.getRawBits();
 	return *this;
 }
 
@@ -29,7 +29,15 @@ Fixed::~Fixed()
 }
 
 /*** getter method to extract the private data value ***/
-const int		Fixed::getRawBits( void ) const { return _fixedValue; }
+int		Fixed::getRawBits( void ) const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return _fixedValue;
+}
 
 /*** setter method to set the private data value ***/
-void	Fixed::setRawBits( int const raw ) { _fixedValue = raw; }
+void	Fixed::setRawBits( int const raw )
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	_fixedValue = raw;
+}

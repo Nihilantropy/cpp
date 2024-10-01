@@ -6,9 +6,9 @@
 class HumanB
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	HumanB( const std::string& name );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	HumanB( const HumanB& other );
 	/*** assignment operator ***/
 	HumanB& operator=( const HumanB& other );

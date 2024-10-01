@@ -1,18 +1,18 @@
 #include "FragTrap.h"
 
-/*** default constructor ***/
+/*** default costructor ***/
 FragTrap::FragTrap() : ClapTrap("Deafult FragTrap") {}
 
-/*** constructor ***/
+/*** costructor ***/
 FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 {
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-	std::cout << "FragTrap constructor called for " << _name << std::endl;
+	std::cout << "FragTrap costructor called for " << _name << std::endl;
 }
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 FragTrap::FragTrap( const FragTrap& other ) : ClapTrap(other) {}
 
 /*** assignment operator ***/

@@ -1,13 +1,13 @@
 #include "Point.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Point::Point() : _x(0), _y(0) {}
 
-/*** constructor with const float parameters ***/
+/*** costructor with const float parameters ***/
 Point::Point( const float x, const float y ) : _x(x), _y(y) {}
 
-/*** copy constructor ***/
-Point::Point( const Point& other ) { *this = other; }
+/*** copy costructor ***/
+Point::Point( const Point& other ) : _x(other._x), _y(other._y) {}
 
 /*** assignment operator ***/
 Point& Point::operator=( const Point& other )

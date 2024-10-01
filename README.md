@@ -25,7 +25,7 @@ The STL in C++ provides a rich set of ready-to-use classes and functions for han
 
 ### 3. **RAII (Resource Acquisition Is Initialization)** 🔒
 
-C++ manages resource allocation and deallocation using constructors and destructors. This principle helps prevent resource leaks and ensures that resources are properly cleaned up when objects go out of scope.
+C++ manages resource allocation and deallocation using costructors and destructors. This principle helps prevent resource leaks and ensures that resources are properly cleaned up when objects go out of scope.
 
 ## 🚀 Breaking Free from C Norms
 

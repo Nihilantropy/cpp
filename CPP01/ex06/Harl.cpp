@@ -1,9 +1,9 @@
 #include "Harl.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Harl::Harl() {}
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 Harl::Harl( const Harl& other ) { *this = other; }
 
 /*** assignment operator ***/
@@ -34,13 +34,13 @@ void	Harl::complain( std::string level )
 	switch (i)
 	{
 		case 0:
-			(this->*actions[0])();
+			(this->*actions[0])(); // fallthrough
 		case 1:
-			(this->*actions[1])();
+			(this->*actions[1])(); // fallthrough
 		case 2:
-			(this->*actions[2])();
+			(this->*actions[2])(); // fallthrough
 		case 3:
-			(this->*actions[3])();
+			(this->*actions[3])(); // fallthrough
 			break ;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]\n";

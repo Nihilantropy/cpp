@@ -38,9 +38,9 @@ cat <<EOF > $header_file
 class $class_name
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	$class_name();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	$class_name( const $class_name& other );
 	/*** assignment operator ***/
 	$class_name& operator=( const $class_name& other );
@@ -58,10 +58,10 @@ EOF
 cat <<EOF > $source_file
 #include "$class_name.h"
 
-/***  constructor ***/
+/***  costructor ***/
 $class_name::$class_name() {}
 
-/***  Copy constructor ***/
+/***  Copy costructor ***/
 $class_name::$class_name( const $class_name& other ) {}
 
 /***  assignment operator override ***/

@@ -6,9 +6,9 @@
 class Brain
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	Brain();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	Brain( const Brain& other );
 	/*** assignment operator ***/
 	Brain& operator=( const Brain& other );

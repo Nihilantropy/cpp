@@ -1,46 +1,42 @@
-#include "../include/Fixed.h"
+#include "Fixed.h"
 
-/* Default constructor to initialize the value at 0 */
-Fixed::Fixed() : _fixedValue(0) { std::cout << "Default constructor called" << std::endl; }
+/* Default costructor to initialize the value at 0 */
+Fixed::Fixed() : _fixedValue(0) {}
 
-/*	Parameter Constructor int
+/*	Parameter Costructor int
 **	Takes const int as a parameter
 **	shift left with << to convert value into a fixed-point
 */ 
 Fixed::Fixed( const int value )
 {
-	std::cout << "Int constructor called" << std::endl;
 	_fixedValue = value << _fractValue;
 }
 
-/*	Parameter Constructor float
+/*	Parameter Costructor float
 **	that takes const float as a parameter
 **	Uses roundf to multiply for 256 and round up the value
 */ 
 Fixed::Fixed( const float value )
 {
-	std::cout << "Float constructor called" << std::endl;
 	_fixedValue = roundf(value * (1 << _fractValue));
 }
 
-/* Copy constructor to make *this object a copy of other object */
+/* Copy costructor to make *this object a copy of other object */
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 /* assignment operator to make this object data, euqals to other object data */
 Fixed& Fixed::operator=(const Fixed& other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->_fixedValue = other.getRawBits();
 	return *this;
 }
 
 /*** destructor ***/
-Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
+Fixed::~Fixed() {}
 
 /* getter method to extract the private data value */
 int		Fixed::getRawBits( void ) const { return _fixedValue; }

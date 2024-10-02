@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap( const std::string& name )
 	_attackDamage = FragTrap::getAttackDamage();
 }
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 DiamondTrap::DiamondTrap( const DiamondTrap& other ) : ClapTrap(other), ScavTrap(other), FragTrap(other) {}
 
 /*** assignment operator ***/

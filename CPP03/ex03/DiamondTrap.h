@@ -7,14 +7,14 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	DiamondTrap( const std::string& name );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	DiamondTrap( const DiamondTrap& other );
 	/*** assignment operator ***/
 	DiamondTrap& operator=( const DiamondTrap& other );
 	/*** destructor ***/
-	virtual ~DiamondTrap();
+	~DiamondTrap();
 
 	/*** public methods ***/
 	void	attack( const std::string& target );

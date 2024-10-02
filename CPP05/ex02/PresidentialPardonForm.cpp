@@ -1,10 +1,10 @@
 #include "PresidentialPardonForm.h"
 
-/*** Constructor ***/
+/*** Costructor ***/
 PresidentialPardonForm::PresidentialPardonForm( const std::string& target )
 	: Form("PresidentialPardonForm", 25, 5), _target(target) {}
 
-/*** Copy constructor ***/
+/*** Copy costructor ***/
 PresidentialPardonForm::PresidentialPardonForm ( const PresidentialPardonForm& other )
 	: Form(other), _target(other._target) {}
 

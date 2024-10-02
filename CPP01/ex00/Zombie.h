@@ -7,9 +7,9 @@
 class Zombie
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	Zombie();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	Zombie( const Zombie& other );
 	/*** assignment operator ***/
 	Zombie& operator=( const Zombie& other );

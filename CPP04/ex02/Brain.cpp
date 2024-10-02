@@ -1,18 +1,18 @@
 #include "Brain.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Brain::Brain()
 {
-	std::cout << "Brain constructor called. Brain is filled with amazing ideas!" << std::endl;
+	std::cout << "Brain costructor called. Brain is filled with amazing ideas!" << std::endl;
 	_ideas = new std::string[100];
 	for (int i = 0; i < 100; i++)
 		_ideas[i] = "What an amazing idea!";
 }
 
-/*** Copy constructor with deep copy implementation ***/
+/*** Copy costructor with deep copy implementation ***/
 Brain::Brain( const Brain& other )
 {
-	std::cout << "Brain copy constructor called. Ideas get multiplied!" << std::endl;
+	std::cout << "Brain copy costructor called. Ideas get multiplied!" << std::endl;
 	_ideas = new std::string[100];
 	for (int i = 0; i < 100; i++)
 		_ideas[i] = other._ideas[i];

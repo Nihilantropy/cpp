@@ -9,9 +9,9 @@
 class PhoneBook
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	PhoneBook();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	PhoneBook( const PhoneBook& other );
 	/*** assignment operator ***/
 	PhoneBook& operator=(const PhoneBook& other );

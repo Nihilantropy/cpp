@@ -6,9 +6,9 @@
 class  ShrubberyCreationForm : public Form
 {
 public:
-	/* constructor with target */
+	/* costructor with target */
 	ShrubberyCreationForm( const std::string& target );
-	/* copy constructor */
+	/* copy costructor */
 	ShrubberyCreationForm( const ShrubberyCreationForm& other );
 	/* assignment operator */
 	ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other );

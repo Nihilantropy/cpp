@@ -12,9 +12,9 @@ class Bureaucrat;
 class Form
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	Form( const std::string& name, const int gradeToSign, const int grade_toExec );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	Form( const Form& other );
 	/*** assignment operator ***/
 	Form& operator=( const Form& other );

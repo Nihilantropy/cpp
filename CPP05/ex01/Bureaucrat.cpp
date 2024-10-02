@@ -1,12 +1,12 @@
 #include "Bureaucrat.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Bureaucrat::Bureaucrat( const std::string& name, int grade ) : _name(name), _grade(grade)
 {
 	checkGrade(_grade);
 }
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 Bureaucrat::Bureaucrat( const Bureaucrat& other ) : _name(other._name), _grade(other._grade) {}
 
 /*** assignment operator ***/

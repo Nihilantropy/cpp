@@ -1,9 +1,9 @@
 #include "Intern.h"
 
-/***  constructor ***/
+/***  costructor ***/
 Intern::Intern() {}
 
-/***  Copy constructor ***/
+/***  Copy costructor ***/
 Intern::Intern( const Intern& other ) { *this = other; }
 
 /***  assignment operator override ***/

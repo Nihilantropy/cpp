@@ -1,14 +1,10 @@
 #include "HumanB.h"
 
-/*** constructor ***/
+/*** costructor ***/
 HumanB::HumanB( const std::string& name) : _name(name), _weapon(NULL) {}
 
-/*** copy constructor ***/
-HumanB::HumanB( const HumanB& other )
-{
-	this->_name = other._name;
-	this->_weapon = other._weapon;
-}
+/*** copy costructor ***/
+HumanB::HumanB( const HumanB& other ) : _name(other._name), _weapon(other._weapon) {}
 
 /*** assignment operator ***/
 HumanB& HumanB::operator=( const HumanB& other )

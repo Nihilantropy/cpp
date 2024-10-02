@@ -1,16 +1,16 @@
 #include "ClapTrap.h"
 
-/*** constructor ***/
+/*** costructor ***/
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap constructor called" << std::endl;
+	std::cout << "ClapTrap costructor called" << std::endl;
 }
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 ClapTrap::ClapTrap( const ClapTrap& other )
 {
 	*this = other;
-	std::cout << "ClapTrap copy constructor called for " << _name << std::endl;
+	std::cout << "ClapTrap copy costructor called for " << _name << std::endl;
 }
 
 /*** assignment operator ***/

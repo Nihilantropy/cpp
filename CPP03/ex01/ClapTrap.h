@@ -7,9 +7,9 @@
 class ClapTrap
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	ClapTrap( std::string name );
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	ClapTrap( const ClapTrap& other );
 	/*** assignment operator ***/
 	ClapTrap& operator=( const ClapTrap& other );

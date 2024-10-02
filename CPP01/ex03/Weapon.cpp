@@ -1,9 +1,9 @@
 #include "Weapon.h"
 
-/*** constructor ***/
+/*** costructor ***/
 Weapon::Weapon( const std::string& type ) : _type(type) {}
 
-/*** copy constructor ***/
+/*** copy costructor ***/
 Weapon::Weapon( const Weapon& other )
 {
 	this->_type = other._type;

@@ -7,9 +7,9 @@
 class Harl
 {
 public:
-	/*** constructor ***/
+	/*** costructor ***/
 	Harl();
-	/*** copy constructor ***/
+	/*** copy costructor ***/
 	Harl( const Harl& other );
 	/*** assignment operator ***/
 	Harl& operator=( const Harl& other );

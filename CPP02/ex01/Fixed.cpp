@@ -1,32 +1,32 @@
 #include "Fixed.h"
 
-/*** Default constructor to initialize the value at 0 ***/
-Fixed::Fixed() : _fixedValue(0) { std::cout << "Default constructor called" << std::endl; }
+/*** Default costructor to initialize the value at 0 ***/
+Fixed::Fixed() : _fixedValue(0) { std::cout << "Default costructor called" << std::endl; }
 
-/*	Parameter Constructor int
+/*	Parameter Costructor int
 **	Takes const int as a parameter
 **	shift left with << to convert value into a fixed-point
 */ 
 Fixed::Fixed( const int value )
 {
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << "Int costructor called" << std::endl;
 	_fixedValue = value << _fractValue;
 }
 
-/*	Parameter Constructor float
+/*	Parameter Costructor float
 **	that takes const float as a parameter
 **	Uses roundf to multiply for 256 and round up the value
 */ 
 Fixed::Fixed( const float value )
 {
-	std::cout << "Float constructor called" << std::endl;
+	std::cout << "Float costructor called" << std::endl;
 	_fixedValue = roundf(value * (1 << _fractValue));
 }
 
-/*** Copy constructor to make *this object a copy of other object ***/
+/*** Copy costructor to make *this object a copy of other object ***/
 Fixed::Fixed( const Fixed& other )
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy costructor called" << std::endl;
 	*this = other;
 }
 
@@ -43,10 +43,16 @@ Fixed& Fixed::operator=(const Fixed& other)
 Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
 
 /*** getter ***/
-int		Fixed::getRawBits( void ) const { return _fixedValue; }
+int		Fixed::getRawBits( void ) const
+{
+	return _fixedValue;
+}
 
 /*** setter ***/
-void	Fixed::setRawBits( int const raw ) { _fixedValue = raw; }
+void	Fixed::setRawBits( int const raw )
+{
+	_fixedValue = raw;
+}
 
 /*	toFloat:
 **	convert the fixed value into a float with a left shift

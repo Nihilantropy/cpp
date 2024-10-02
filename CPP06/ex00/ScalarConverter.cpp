@@ -1,6 +1,12 @@
 #include "ScalarConverter.h"
 #include <cmath>
 
+/***  costructor ***/
+ScalarConverter::ScalarConverter() {}
+
+/***  Destructor ***/
+ScalarConverter::~ScalarConverter() {}
+
 /*** public methods ***/
 void	ScalarConverter::convert( const std::string& literal )
 {

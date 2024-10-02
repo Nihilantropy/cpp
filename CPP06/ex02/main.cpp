@@ -1,5 +1,4 @@
-#include "Base.h"
-#include <stdlib.h>
+#include "mainUtils.h"
 
 int main()
 {
@@ -10,21 +9,21 @@ int main()
 	**	distributed).
 	**	font: http://www.math.uaa.alaska.edu/~afkjm/csce211/handouts/RandomFunctions.pdf
 	*/
-    srand(static_cast<unsigned int>(time(NULL)));
+	srand(static_cast<unsigned int>(time(NULL)));
 
-    /* Generate a random instance of A, B, or C */
-    Base* instance = generate();
-    
-    /* Identify using pointer */
-    std::cout << "Identifying using pointer: ";
-    identify(instance);
+	/* Generate a random instance of A, B, or C */
+	Base* instance = generate();
+	
+	/* Identify using pointer */
+	std::cout << "Identifying using pointer: ";
+	identify(instance);
 
-    /* Identify using reference */
-    std::cout << "Identifying using reference: ";
-    identify(*instance);
+	/* Identify using reference */
+	std::cout << "Identifying using reference: ";
+	identify(*instance);
 
-	 /* Clean up the allocated memory */
-    delete instance;
-    return 0;
+	/* Clean up the allocated memory */
+	delete instance;
+	return 0;
 }
 

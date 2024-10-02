@@ -10,16 +10,18 @@
 class ScalarConverter
 {
 public:
-
-	/*** destructor ***/
-	~ScalarConverter();
-
 	/*** public methods ***/
 	static void	convert( const std::string& literal );
 
 private:
 	/*** private constructor ***/
 	ScalarConverter();
+	/*** copy costructor ***/
+	ScalarConverter( const ScalarConverter& other );
+	/*** assignment operator ***/
+	ScalarConverter& operator=( const ScalarConverter& other );
+	/*** destructor ***/
+	~ScalarConverter();
 
 	/*** private methods ***/
 	/* check type */

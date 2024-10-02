@@ -12,6 +12,10 @@ int main(int argc, char** argv)
 	
 	try
 	{
+		/*
+		**	we can call the convert method of the ScalarConverter class 
+		**	without the need to initialize the object because the method is static
+		*/
 		ScalarConverter::convert(literal);
 	}
 	catch (const std::exception& e)

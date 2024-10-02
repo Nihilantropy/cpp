@@ -1,12 +1,6 @@
 #include "ScalarConverter.h"
 #include <cmath>
 
-/***  constructor ***/
-ScalarConverter::ScalarConverter() {}
-
-/***  Destructor ***/
-ScalarConverter::~ScalarConverter() {}
-
 /*** public methods ***/
 void	ScalarConverter::convert( const std::string& literal )
 {
@@ -159,8 +153,10 @@ bool	ScalarConverter::isDouble( const std::string& literal )
 void	ScalarConverter::printChar( double value, short flag )
 {
 	std::cout << "char: ";
-	if (flag != -1 || (value < 0 || value > 127 || !std::isprint(static_cast<int>(value))))
+	if (flag != -1 || (value < 0 || value > 127))
 		std::cout << "impossible" << std::endl;
+	else if (!std::isprint(static_cast<int>(value)))
+		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
 }
@@ -214,3 +210,19 @@ void	ScalarConverter::printDouble( double value, short flag )
 	else
 		std::cout << std::fixed << std::setprecision(1) << value << std::endl;
 }
+
+/***  constructor ***/
+ScalarConverter::ScalarConverter() {}
+
+/*** copy costructor ***/
+ScalarConverter::ScalarConverter( const ScalarConverter& other ) { *this = other; }
+
+/*** assignment operator ***/
+ScalarConverter& ScalarConverter::operator=( const ScalarConverter& other )
+{
+	(void)other;
+	return *this;
+}
+
+/***  Destructor ***/
+ScalarConverter::~ScalarConverter() {}

@@ -6,9 +6,9 @@
 
 struct Data
 {
-	/*** struct initialization ***/
+	/*** struct default initialization ***/
 	Data();
-	/*** struct method ***/
+	/*** struct parameterazied initialization ***/
 	Data(int n, std::string t);
 
 	/*** struct variables ***/

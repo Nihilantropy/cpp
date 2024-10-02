@@ -28,8 +28,8 @@ private:
 	static int	literalType( const std::string& literal );
 	static bool	isChar( const std::string& literal );
 	static bool	isInt( const std::string& literal );
-	static bool isFloat( const std::string& literal );
-	static bool isDouble( const std::string& literal );
+	static bool	isFloat( const std::string& literal );
+	static bool	isDouble( const std::string& literal );
 
 	/* print type */
 	static void	printChar( double value, short flag );

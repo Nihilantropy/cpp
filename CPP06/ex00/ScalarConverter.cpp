@@ -1,13 +1,16 @@
 #include "ScalarConverter.h"
 #include <cmath>
 
-/***  costructor ***/
-ScalarConverter::ScalarConverter() {}
-
-/***  Destructor ***/
-ScalarConverter::~ScalarConverter() {}
-
 /*** public methods ***/
+
+/*
+**	1) Check which literal type was passed as a string parameter.
+**	2) Execute switch cases for each type or for special cases: "+inf", "-inf", and "nan".
+**	3) If the literal can be converted, store the value in the "value" variable
+**		(it's a double because it can contain all other types).
+**	4) Print the value. If the flag is active, an edge case occurred, so
+**		the output will be formatted accordingly.
+*/
 void	ScalarConverter::convert( const std::string& literal )
 {
 	double		value;
@@ -54,7 +57,7 @@ void	ScalarConverter::convert( const std::string& literal )
 
 /*** private methods ***/
 
-/* check type */
+/* Check the type of the literal */
 int	ScalarConverter::literalType( const std::string& literal )
 {
 	if (literal == "+inf" || literal == "inf")
@@ -76,10 +79,10 @@ int	ScalarConverter::literalType( const std::string& literal )
 }
 
 /*
-**	return true if all condition are matched:
-**	1) literal length must be 1
-**	2) literal must be printable
-**	3) literal must not be a digit
+**	Return true if all conditions are met:
+**	1) The literal length must be 1.
+**	2) The literal must be printable.
+**	3) The literal must not be a digit.
 */
 bool	ScalarConverter::isChar( const std::string& literal )
 {
@@ -87,12 +90,12 @@ bool	ScalarConverter::isChar( const std::string& literal )
 }
 
 /*
-**	return true if all condition are matched:
-**	1) pointer end is used to check where the conversion terminates
-**	2) function strtol convert the literal string into a long int in base of 10
-**	3) *end != '\0' verify if there are residual char after the converted numeric part
-**	4) errno == ERANGE verify if there was an overflow or underflow error
-**	5) return true if the converted long in between min and max of int range
+**	Return true if all conditions are met:
+**	1) The end pointer is used to check where the conversion terminates.
+**	2) The strtol function converts the literal string into a long int in base 10.
+**	3) *end != '\0' checks if there are residual characters after the converted numeric part.
+**	4) errno == ERANGE checks if there was an overflow or underflow error.
+**	5) Return true if the converted long is within the minimum and maximum range of int.
 */
 bool	ScalarConverter::isInt( const std::string& literal )
 {
@@ -106,15 +109,15 @@ bool	ScalarConverter::isInt( const std::string& literal )
 }
 
 /*
-**	return true if all condition are matched:
-**	1) return true if parameter is a pseudoliteral (nan, +inf, -inf)
-**	2) pointer end is used to check where the conversion terminates
-**	3) function strtof is used to convert literal string to float
-**	4) end != 'f' check if there's the 'f' char that indicates
-**		the literal float type
-**	5) *(end + 1) != '\0' check if there's something else after the 'f' char
-**	6) errno == ERANGE verify if there was an overflow or underflow error
-**	7) return false if either one of the above condition is matched, otherwise return true
+**	Return true if all conditions are met:
+**	1) Return true if the parameter is a pseudoliteral (nan, +inf, -inf).
+**	2) The end pointer is used to check where the conversion terminates.
+**	3) The strtof function is used to convert the literal string to float.
+**	4) end != 'f' checks if there's the 'f' character indicating
+**		the literal float type.
+**	5) *(end + 1) != '\0' checks if there's something else after the 'f' character.
+**	6) errno == ERANGE checks if there was an overflow or underflow error.
+**	7) Return false if any of the above conditions are met; otherwise, return true.
 */
 bool	ScalarConverter::isFloat( const std::string& literal )
 {
@@ -129,13 +132,13 @@ bool	ScalarConverter::isFloat( const std::string& literal )
 }
 
 /*
-**	return true if all condition are matched:
-**	1) return true if parameter is a pseudoliteral (nan, +inf, -inf)
-**	2) pointer end is used to check where the conversion terminates
-**	3) function strtod is used to convert literal string to double
-**	4) *end != '\0' check if there's something else after string convertion
-**	5) errno == ERANGE verify if there was an overflow or underflow error
-**	6) return false if either one of the above condition is matched, otherwise return true
+**	Return true if all conditions are met:
+**	1) Return true if the parameter is a pseudoliteral (nan, +inf, -inf).
+**	2) The end pointer is used to check where the conversion terminates.
+**	3) The strtod function is used to convert the literal string to double.
+**	4) *end != '\0' checks if there's anything else after the string conversion.
+**	5) errno == ERANGE checks if there was an overflow or underflow error.
+**	6) Return false if any of the above conditions are met; otherwise, return true.
 */
 bool	ScalarConverter::isDouble( const std::string& literal )
 {
@@ -152,9 +155,9 @@ bool	ScalarConverter::isDouble( const std::string& literal )
 /* print type */
 
 /*
-**	handle char print with specific checks wether value
-**	is not a number (isnan) and if is infinity (isnif)
-**	cast the value to char before print
+**	Handle char printing with specific checks to see if the value
+**	is not a number (isnan) and if it is infinity (isinf).
+**	Cast the value to char before printing.
 */
 void	ScalarConverter::printChar( double value, short flag )
 {
@@ -168,9 +171,9 @@ void	ScalarConverter::printChar( double value, short flag )
 }
 
 /*
-**	handle int print with specific checks wether value
-**	is not a number (isnan) and if is infinity (isnif)
-**	cast the value to int before print
+**	Handle int printing with specific checks to see if the value
+**	is not a number (isnan) and if it is infinity (isinf).
+**	Cast the value to int before printing.
 */
 void	ScalarConverter::printInt( double value, short flag )
 {
@@ -182,10 +185,10 @@ void	ScalarConverter::printInt( double value, short flag )
 }
 
 /*
-**	handle float print with specific checks wether value
-**	is not a number (isnan) nad if is infinity (isnif)
-**	printing nanf, +inf or -inf
-**	cast the value to float before print
+**	Handle float printing with specific checks to see if the value
+**	is not a number (isnan) and if it is infinity (isinf).
+**	Print "nanf", "+inf", or "-inf".
+**	Cast the value to float before printing.
 */
 void	ScalarConverter::printFloat( double value, short flag )
 {
@@ -201,10 +204,10 @@ void	ScalarConverter::printFloat( double value, short flag )
 }
 
 /*
-**	handle double print with specific checks wether value
-**	is not a number (isnan) nad if is infinity (isnif)
-**	printing nan, +inf or -inf
-**	cast the value to double before print
+**	Handle double printing with specific checks to see if the value
+**	is not a number (isnan) and if it is infinity (isinf).
+**	Print "nan", "+inf", or "-inf".
+**	Cast the value to double before printing.
 */
 void	ScalarConverter::printDouble( double value, short flag )
 {

@@ -12,7 +12,7 @@ public:
 	static uintptr_t	serialize(Data* ptr);
 
 	/*** convert a uintptr_t type into a Data struct pointer ***/
-	static Data*			deserialize(uintptr_t raw);
+	static Data*		deserialize(uintptr_t raw);
 
 private:
 	/*** costructor ***/

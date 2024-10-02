@@ -1,5 +1,5 @@
 # Variables
-NAME = identify
+NAME = identify_real_type
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_DIR = ./

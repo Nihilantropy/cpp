@@ -20,9 +20,18 @@ Base*	generate( void )
 }
 
 /*	identify (pointer parameter):
-**	identify the type of a Base pointer
-**	(sinse A, B and C hineryth from Base, with this
-**	function we can identify which pointer is of which class)
+**	Identifies the type of a pointer to the Base class.
+**	Since classes A, B, and C inherit from Base, this function
+**	allows us to determine which derived class the Base pointer points to.
+**
+**	The dynamic_cast allows us to safely downcast a Base pointer (p)
+**	to one of its derived classes (A, B, or C), because the Base class 
+**	has a virtual method, making it a polymorphic type.
+**
+**	If the cast fails, dynamic_cast returns a NULL pointer, indicating 
+**	that the object is not of the expected type. The function uses 
+**	this behavior to check each derived class sequentially.
+**	If none of the casts succeed, the final else block prints "Unknown type".
 */
 void	identify( Base* p )
 {
@@ -37,8 +46,25 @@ void	identify( Base* p )
 }
 
 /*	identify (reference parameter):
-**	use try-catch block to see if the passed reference
-**	corrispond to the the Base type
+**	Identifies the type of a reference to a Base object.
+**	Since classes A, B, and C inherit from Base, this function
+**	allows us to determine which derived class the Base reference
+**	actually refers to.
+**
+**	The dynamic_cast is used to safely downcast the Base reference (p)
+**	to one of its derived classes (A, B, or C). Because a reference is used,
+**	if the cast fails, dynamic_cast throws a `std::exception`.
+**	This is different from using a pointer, where `dynamic_cast` would return `NULL` instead.
+**
+**	The function handles the `std::exception` in a try-catch block.
+**	Each derived class is tested sequentially: if the cast to `A&` fails, the exception
+**	is caught, and a new try block tests for `B&`. If that fails, the process is repeated for `C&`.
+**
+**	If all three casts fail, the function catches the final exception and prints an error message,
+**	indicating that the type could not be identified as `A`, `B`, or `C`.
+**
+**	Note: Using a reference parameter is required to distinguish this implementation
+**	from the pointer-based `identify` function, as references provide different casting behavior.
 */
 void	identify( Base& p )
 {

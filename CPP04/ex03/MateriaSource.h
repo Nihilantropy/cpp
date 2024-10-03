@@ -8,9 +8,9 @@
 class MateriaSource : public IMateriaSource
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	MateriaSource();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	MateriaSource( const MateriaSource& other );
 	/*** assignment operator ***/
 	MateriaSource& operator=( const MateriaSource& other );

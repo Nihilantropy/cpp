@@ -1,15 +1,15 @@
 #include "ScavTrap.h"
 
-/*** costructor ***/
+/*** constructor ***/
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	std::cout << "ScavTrap costructor called for " << _name << std::endl;
+	std::cout << "ScavTrap constructor called for " << _name << std::endl;
 }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other) {}
 
 /*** assignment operator ***/

@@ -6,13 +6,13 @@
 class Contact
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Contact();
-	/*** parameterized costructor ***/
+	/*** parameterized constructor ***/
 	Contact( const std::string& first_name, const std::string& last_name,
 			const std::string& nickname, const std::string& phone_number,
 			const std::string& darkest_secret );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Contact( const Contact& other );
 	/*** assignment operator ***/
 	Contact& operator=( const Contact& other );

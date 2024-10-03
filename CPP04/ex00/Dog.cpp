@@ -1,13 +1,13 @@
 #include "Dog.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Dog::Dog()
 {
 	_type = "Dog";
-	std::cout << "Dog costructor called" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
 }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Dog::Dog( const Dog& other ) : Animal(other) {}
 
 /*** assignment operator ***/

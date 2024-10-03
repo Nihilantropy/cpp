@@ -6,11 +6,11 @@
 class Point
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Point();
-	/*** costructor with const float parameters ***/
+	/*** constructor with const float parameters ***/
 	Point( const float x, const float y );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Point( const Point& other );
 	/*** assignment operator ***/
 	Point& operator=( const Point& other );

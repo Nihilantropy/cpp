@@ -1,12 +1,12 @@
 #include "Point.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Point::Point() : _x(0), _y(0) {}
 
-/*** costructor with const float parameters ***/
+/*** constructor with const float parameters ***/
 Point::Point( const float x, const float y ) : _x(x), _y(y) {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Point::Point( const Point& other ) : _x(other._x), _y(other._y) {}
 
 /*** assignment operator ***/

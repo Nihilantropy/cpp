@@ -8,11 +8,11 @@
 class ScavTrap : virtual public ClapTrap
 {
 public:
-	/*** default costructor ***/
+	/*** default constructor ***/
 	ScavTrap();
-	/*** costructor ***/
+	/*** constructor ***/
 	ScavTrap( std::string name );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	ScavTrap( const ScavTrap& other );
 	/*** assignment operator ***/
 	ScavTrap& operator=( const ScavTrap& other );

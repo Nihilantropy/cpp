@@ -7,9 +7,9 @@
 class Intern
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Intern();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Intern( const Intern& other );
 	/*** assignment operator ***/
 	Intern& operator=( const Intern& other );

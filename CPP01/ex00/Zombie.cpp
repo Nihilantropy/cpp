@@ -1,9 +1,9 @@
 # include "Zombie.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Zombie::Zombie() : _name("") {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Zombie::Zombie( const Zombie& other )
 {
 	this->_name = other._name;

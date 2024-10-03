@@ -6,9 +6,9 @@
 class Animal
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Animal();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Animal( const Animal& other );
 	/*** assignment operator ***/
 	Animal& operator=( const Animal& other );

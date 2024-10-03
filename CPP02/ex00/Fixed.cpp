@@ -1,15 +1,15 @@
 #include "Fixed.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Fixed::Fixed() : _fixedValue(0)
 {
-	std::cout << "Default costructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Fixed::Fixed( const Fixed& other )
 {
-	std::cout << "Copy costructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 

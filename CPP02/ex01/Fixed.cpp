@@ -1,32 +1,32 @@
 #include "Fixed.h"
 
-/*** Default costructor to initialize the value at 0 ***/
-Fixed::Fixed() : _fixedValue(0) { std::cout << "Default costructor called" << std::endl; }
+/*** Default constructor to initialize the value at 0 ***/
+Fixed::Fixed() : _fixedValue(0) { std::cout << "Default constructor called" << std::endl; }
 
-/*	Parameter Costructor int
+/*	Parameter Constructor int
 **	Takes const int as a parameter
 **	shift left with << to convert value into a fixed-point
 */ 
 Fixed::Fixed( const int value )
 {
-	std::cout << "Int costructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	_fixedValue = value << _fractValue;
 }
 
-/*	Parameter Costructor float
+/*	Parameter Constructor float
 **	that takes const float as a parameter
 **	Uses roundf to multiply for 256 and round up the value
 */ 
 Fixed::Fixed( const float value )
 {
-	std::cout << "Float costructor called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 	_fixedValue = roundf(value * (1 << _fractValue));
 }
 
-/*** Copy costructor to make *this object a copy of other object ***/
+/*** Copy constructor to make *this object a copy of other object ***/
 Fixed::Fixed( const Fixed& other )
 {
-	std::cout << "Copy costructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 

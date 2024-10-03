@@ -15,9 +15,9 @@ public:
 	static Data*		deserialize(uintptr_t raw);
 
 private:
-	/*** costructor ***/
+	/*** constructor ***/
 	Serializer();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Serializer( const Serializer& other );
 	/*** assignment operator ***/
 	Serializer& operator=( const Serializer& other );

@@ -14,9 +14,9 @@ public:
 	static void	convert( const std::string& literal );
 
 private:
-	/*** private costructor ***/
+	/*** private constructor ***/
 	ScalarConverter();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	ScalarConverter( const ScalarConverter& other );
 	/*** assignment operator ***/
 	ScalarConverter& operator=( const ScalarConverter& other );

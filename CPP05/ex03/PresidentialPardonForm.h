@@ -6,9 +6,9 @@
 class PresidentialPardonForm : public Form
 {
 public:
-	/* costructor with target */
+	/* constructor with target */
 	PresidentialPardonForm( const std::string& target );
-	/* copy costructor */
+	/* copy constructor */
 	PresidentialPardonForm( const PresidentialPardonForm& other );
 	/* assignment operator */
 	PresidentialPardonForm& operator=( const PresidentialPardonForm& other );

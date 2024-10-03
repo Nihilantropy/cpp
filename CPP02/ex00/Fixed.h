@@ -6,9 +6,9 @@
 class Fixed
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Fixed();
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Fixed( const Fixed& other );
 	/*** assignment operator ***/
 	Fixed& operator=( const Fixed& other );

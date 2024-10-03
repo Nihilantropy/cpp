@@ -7,9 +7,9 @@
 class Weapon
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Weapon( const std::string& type );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Weapon( const Weapon& other );
 	/*** assignment operator ***/
 	Weapon& operator=( const Weapon& other );

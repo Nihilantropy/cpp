@@ -1,9 +1,9 @@
 #include "HumanB.h"
 
-/*** costructor ***/
+/*** constructor ***/
 HumanB::HumanB( const std::string& name) : _name(name), _weapon(NULL) {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 HumanB::HumanB( const HumanB& other ) : _name(other._name), _weapon(other._weapon) {}
 
 /*** assignment operator ***/

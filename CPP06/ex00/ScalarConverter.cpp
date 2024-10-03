@@ -223,7 +223,7 @@ void	ScalarConverter::printDouble( double value, short flag )
 /***  constructor ***/
 ScalarConverter::ScalarConverter() {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 ScalarConverter::ScalarConverter( const ScalarConverter& other ) { *this = other; }
 
 /*** assignment operator ***/

@@ -15,9 +15,9 @@ class Bureaucrat;
 class Form
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Form( const std::string& name, const int gradeToSign, const int grade_toExec );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Form( const Form& other );
 	/*** assignment operator ***/
 	Form& operator=( const Form& other );

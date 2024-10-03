@@ -40,10 +40,10 @@ Data* Serializer::deserialize(uintptr_t raw)
 
 /*** private methods ***/
 
-/*** costructor ***/
+/*** constructor ***/
 Serializer::Serializer() {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Serializer::Serializer( const Serializer& other ) { *this = other; }
 
 /*** assignment operator ***/

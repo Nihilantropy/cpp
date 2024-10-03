@@ -1,9 +1,9 @@
 #include "Harl.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Harl::Harl() {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Harl::Harl( const Harl& other ) { *this = other; }
 
 /*** assignment operator ***/

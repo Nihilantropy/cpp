@@ -8,7 +8,7 @@
 class Bureaucrat
 {
 public:
-	/*** costructor & destructor ***/
+	/*** constructor & destructor ***/
 	Bureaucrat( const std::string& name, int grade );
 	Bureaucrat( const Bureaucrat& other );
 	Bureaucrat& operator= ( const Bureaucrat& other );

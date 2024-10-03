@@ -1,11 +1,11 @@
 #include "RobotomyRequestForm.h"
 #include <ctime>
 
-/*** Costructor ***/
+/*** Constructor ***/
 RobotomyRequestForm::RobotomyRequestForm( const std::string& target )
 	: Form("RobotomyRequestForm", 72, 45), _target(target) {}
 
-/*** Copy costructor ***/
+/*** Copy constructor ***/
 RobotomyRequestForm::RobotomyRequestForm ( const RobotomyRequestForm& other )
 	: Form(other), _target(other._target) {}
 

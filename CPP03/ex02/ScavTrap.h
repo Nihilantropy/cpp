@@ -8,9 +8,9 @@
 class ScavTrap : public ClapTrap
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	ScavTrap( std::string name );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	ScavTrap( const ScavTrap& other );
 	/*** assignment operator ***/
 	ScavTrap& operator=( const ScavTrap& other );

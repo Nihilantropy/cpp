@@ -7,9 +7,9 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	DiamondTrap( const std::string& name );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	DiamondTrap( const DiamondTrap& other );
 	/*** assignment operator ***/
 	DiamondTrap& operator=( const DiamondTrap& other );

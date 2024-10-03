@@ -1,9 +1,9 @@
 #include "PhoneBook.h"
 
-/*** costructor ***/
+/*** constructor ***/
 PhoneBook::PhoneBook() : _contact_count(0) {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 PhoneBook::PhoneBook( const PhoneBook& other )
 {
 	this->_contact_count = other._contact_count;

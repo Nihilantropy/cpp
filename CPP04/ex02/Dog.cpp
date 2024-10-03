@@ -1,18 +1,18 @@
 #include "Dog.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Dog::Dog()
 {
 	_type = "Dog";
-	std::cout << _type << " costructor called" << std::endl;
+	std::cout << _type << " constructor called" << std::endl;
 	_brain = new Brain();
 }
 
-/*** copy costructor with deep copy implementation ***/
+/*** copy constructor with deep copy implementation ***/
 Dog::Dog( const Dog& other ) : AAnimal(other)
 {
 	_type = other._type;
-	std::cout << _type <<  " copy costructor called " << _type <<  " has it's own brain." << std::endl;
+	std::cout << _type <<  " copy constructor called " << _type <<  " has it's own brain." << std::endl;
 	_brain = new Brain(*other._brain);
 }
 

@@ -1,9 +1,9 @@
 #include "HumanA.h"
 
-/*** costructor ***/
+/*** constructor ***/
 HumanA::HumanA( const std::string& name, Weapon& weapon ) : _name(name), _weapon(weapon) {}
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 HumanA::HumanA( const HumanA& other ) : _name(other._name), _weapon(other._weapon) {}
 
 /*** assignment operator ***/

@@ -7,13 +7,13 @@
 class Fixed
 {
 public:
-	/*** costructor ***/
+	/*** constructor ***/
 	Fixed();
-	/*** costructor with int parameter ***/
+	/*** constructor with int parameter ***/
 	Fixed( const int );
-	/*** costructor with float parameter ***/
+	/*** constructor with float parameter ***/
 	Fixed( const float );
-	/*** copy costructor ***/
+	/*** copy constructor ***/
 	Fixed( const Fixed& other );
 	/*** assignment operator ***/
 	Fixed& operator=( const Fixed& other );

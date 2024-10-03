@@ -1,18 +1,18 @@
 #include "Cat.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Cat::Cat()
 {
 	_type = "Cat";
-	std::cout << _type << " costructor called" << std::endl;
+	std::cout << _type << " constructor called" << std::endl;
 	_brain = new Brain();
 }
 
-/*** copy costructor with deep copy implementation ***/
+/*** copy constructor with deep copy implementation ***/
 Cat::Cat( const Cat& other ) : Animal(other)
 {
 	_type = other._type;
-	std::cout << _type <<  " copy costructor called " << _type <<  " has it's own brain." << std::endl;
+	std::cout << _type <<  " copy constructor called " << _type <<  " has it's own brain." << std::endl;
 	_brain = new Brain(*other._brain);
 }
 

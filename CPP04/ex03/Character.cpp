@@ -1,6 +1,6 @@
 #include "Character.h"
 
-/*** costructor ***/
+/*** constructor ***/
 Character::Character ( const std::string& name ) : _name(name), _floorCount(0)
 {
 	for (int i = 0; i < INV_SLOT; i++)
@@ -9,7 +9,7 @@ Character::Character ( const std::string& name ) : _name(name), _floorCount(0)
 		_floor[i] = NULL;
 }
 
-/*** copy costructor ***/
+/*** copy constructor ***/
 Character::Character( const Character& other ) : _name(other._name), _floorCount(other._floorCount)
 {
 	for (int i = 0; i < INV_SLOT; i++)

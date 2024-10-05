@@ -4,6 +4,7 @@ bower_components/
 dist/
 build/
 test
+subjects
 
 # Files
 .DS_Store

@@ -7,8 +7,8 @@ int main()
 {
 	std::cout << "Try to instantiate a AAnimal abstract class" << std::endl;
 
-	//AAnimal*	errAnimal = new AAnimal(); // Remove this to make it work
-
+	// AAnimal	errAnimal = new AAnimal();
+	// AAnimal test; // Comment this to make it work
 	std::cout << "Basic Test: Creating and deleting individual animals" << std::endl;
 	
 	const AAnimal* j = new Dog(); // This is allowd because Dog and Cat implement makeSound method

@@ -55,11 +55,11 @@ int main()
 
 	Dog basic;
 
-	
+	{
 
 	Dog tmp = basic;
 
-	
+	}
 
 	std::cout << "---------------------" << std::endl;
 
